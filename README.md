@@ -12,7 +12,9 @@ work without it. Though I used to run my own bootstrapped config, NvChad is just
 ## 🎪 Showcase
 
 ![Start Screen](https://github.com/ByteMyBriefs/nvim-config/blob/main/demo/start_screen.png?raw=true)
+
 ![Default View of Editor](https://github.com/ByteMyBriefs/nvim-config/blob/main/demo/default.png?raw=true)
+
 ![Noice Cmdline](https://github.com/ByteMyBriefs/nvim-config/blob/main/demo/noice.png?raw=true)
 
 ## 🛠️ Installation
@@ -39,56 +41,55 @@ work without it. Though I used to run my own bootstrapped config, NvChad is just
 
 🎊🎉 VOILA 🎉🎊.
 
-You should now be good to go ☺️..
+You should now be good to go ☺️.
 
-3. **(Optional) Configure AI Plugins**: Lastly, for those of you that want to
-   take advantage, we need to quickly set up your AI tooling. These should be
-   very quick.
+**(Optional) Configure AI Plugins**: Lastly, for those of you that want to take
+advantage, we need to quickly set up your AI tooling. These should be very
+quick.
 
-   ++ **Copilot.lua && cmp-copilot**: Once all plugins are installed, simply
-   enter the command `"Copilot auth` and login to your Github account. If you
-   have any issues, please see their full documentation
-   [here](https://github.com/zbirenbaum/copilot.lua). Note: that an active
-   Copilot account is required.
+++ **Copilot.lua && cmp-copilot**: Once all plugins are installed, simply enter
+the command `"Copilot auth` and login to your Github account. If you have any
+issues, please see their full documentation
+[here](https://github.com/zbirenbaum/copilot.lua). Note: that an active Copilot
+account is required.
 
-   ++ **ChatGPT.nvim && NeoAI**: Set environment variable called $OPENAI_API_KEY
-   which you can obtain [here](https://platform.openai.com/account/api-keys).
-   Full instructions can be found
-   [here](https://github.com/jackMort/ChatGPT.nvim) and
-   [here](https://github.com/Bryley/neoai.nvim) respectively. Note: An active
-   OpenAI API Key is required, but a free key will likely last you a very long
-   time by itself.
+++ **ChatGPT.nvim && NeoAI**: Set environment variable called $OPENAI_API_KEY
+which you can obtain [here](https://platform.openai.com/account/api-keys). Full
+instructions can be found [here](https://github.com/jackMort/ChatGPT.nvim) and
+[here](https://github.com/Bryley/neoai.nvim) respectively. Note: An active
+OpenAI API Key is required, but a free key will likely last you a very long time
+by itself.
 
 ## Primary Features
 
 In addition to the wonderful theming and UI provided by NvChad, this
 configuration also offers:
 
-- **First-Class AI Integration**
+### First-Class AI Integration
 
-  ++ **Copilot.lua** by [zbirenbaum](https://github.com/zbirenbaum)
+++ **Copilot.lua** by [zbirenbaum](https://github.com/zbirenbaum)
 
-  ++ **Cmp-copilot** by [zbirenbaum](https://github.com/zbirenbaum)
+++ **Cmp-copilot** by [zbirenbaum](https://github.com/zbirenbaum)
 
-  ++ **ChatGpt** by [jackMort](https://github.com/jackMort)
+++ **ChatGpt** by [jackMort](https://github.com/jackMort)
 
-  ++ **NeoAI** by [Bryley](https://github.com/Bryley)
+++ **NeoAI** by [Bryley](https://github.com/Bryley)
 
-- **Out-of-the-Box Support for All Major Languages**
+#### Out-of-the-Box Support for All Major Languages
 
-  ++ **LSPs && Linters && Formatters**
+++ **LSPs && Linters && Formatters**
 
-  ++ **Node.js/Javascript/Typescript**, as well as support for:
+++ **Node.js/Javascript/Typescript**, as well as support for:
 
-  ++ Svelte, and
+++ Svelte, and
 
-  ++ React
+++ React
 
-  as well.
+as well.
 
-  ++ **Eslint, Prettier, etc.**
+++ **Eslint, Prettier, etc.**
 
-  ++ **Rust, Rust-analyzer, Rust tools**
+++ **Rust, Rust-analyzer, Rust tools**
 
 - **Enhanced Motion**
 
