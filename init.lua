@@ -2,7 +2,7 @@
 ------------------------------ Note: Only runs IFF in Neovide. --------------------------------------
 
 if vim.g.neovide then
-  require "configs.neovide"
+  require "custom.configs.neovide"
 end
 
 ------------------------------------------- GENERAL -------------------------------------------------
