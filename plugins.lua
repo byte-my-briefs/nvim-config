@@ -1,3 +1,4 @@
+---- Note: Mason, Treesitter, and Nvim-Tree are configured in './configs/overrides.lua'----
 local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
@@ -69,10 +70,8 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     event = "VeryLazy",
     dependencies = {
-      -- {
       { "zbirenbaum/copilot-cmp" },
     },
-    --
     opts = {
       sources = {
         { name = "copilot" },
@@ -268,8 +267,17 @@ local plugins = {
   },
 
   {
-    -- see './init.lua' for config options
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    event = "VeryLazy", -- previously: 'BufEnter'
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  },
+
+  {
+    -- see './init.lua' for config options (since it is Vim native)
     "wfxr/minimap.vim",
+    enabled = false,
     event = "BufEnter",
   },
 
@@ -312,14 +320,6 @@ local plugins = {
       vim.api.nvim_command "autocmd InsertEnter * let b:cursorword = 0"
       vim.api.nvim_command "autocmd InsertLeave * let b:cursorword = 1"
       vim.api.nvim_command "augroup END"
-    end,
-  },
-
-  {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    event = "VeryLazy", -- previously: 'BufEnter'
-    config = function()
-      require("lsp_lines").setup()
     end,
   },
 }

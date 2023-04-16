@@ -7,9 +7,9 @@ local highlights = require "custom.highlights"
 ----------------------------------------- UI -------------------------------------------
 
 M.ui = {
-  -- also see: "chadtain", "penumbra_dark", "bearded-arc", "everforest"
-  theme = "penumbra_dark",
-  theme_toggle = { "penumbra_dark", "everforest" },
+  -- also see: "chadtain", "doomchad", "bearded-arc", "everforest"
+  theme = "doomchad",
+  theme_toggle = { "doomchad", "everforest" },
   transparency = false,
 
   hl_override = highlights.override,
