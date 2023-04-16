@@ -8,8 +8,8 @@ local lspconfig = require "lspconfig"
 -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
 -- for all available serveers/configurations.
 -- NOTE: Any new LSPs MUST BE:
---                  (1) ADDED HERE,
---                  (2) AND added to the list of req'd Mason servers in './overrides.lua.'
+--            (1) ADDED HERE,
+--            (2) AND added to the list of req'd Mason servers in './overrides.lua.'
 local servers = {
   -- TODO: install PYTHON LSP (jedi or Pyright).
   "html",
@@ -19,11 +19,16 @@ local servers = {
   "lua_ls",
 
   "prismals",
-  "rust_analyzer",
   "svelte",
   "tailwindcss",
   "emmet_ls",
   "bashls",
+
+  -- NOTE: Rust-analyzer is included, but is loaded automatically by Rust-tools,
+  -- so do NOT turn this on. See https://github.com/simrat39/rust-tools.nvim#setup
+  -- for more information.
+  --
+  -- "rust_analyzer",
 }
 
 ------------------------------------- SERVER SETUP -----------------------------------------

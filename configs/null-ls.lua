@@ -36,9 +36,11 @@ local sources = {
   },
   formatting.stylua,
   formatting.clang_format,
-  formatting.rustfmt,
+
   formatting.gofmt,
   formatting.goimports,
+
+  formatting.rustfmt,
   -- b.formatting.prismaFmt,
 
   ----------------------------------- CODE ACTIONS --------------------------------------

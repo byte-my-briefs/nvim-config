@@ -45,6 +45,43 @@ local plugins = {
     end,
   },
 
+  ---------------------------------------- RUST ------------------------------------------
+
+  {
+    "simrat39/rust-tools.nvim",
+    -- event = "BufEnter *.rs",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "neovim/nvim-lspconfig",
+      "mfussenegger/nvim-dap",
+    },
+    config = function()
+      local rt = require "rust-tools"
+      rt.setup {
+        server = {
+          on_attach = function(_, bufnr)
+            -- TODO: add below keybinds to WhichKey in './mappings.lua'
+            --
+            -- Hover actions
+            vim.keymap.set("n", "<C-k>", rt.hover_actions.hover_actions, { buffer = bufnr })
+            -- Code action groups
+            vim.keymap.set("n", "<C-l>", rt.code_action_group.code_action_group, { buffer = bufnr })
+            -- Inlay hints (for all buffers)
+            rt.inlay_hints.enable()
+          end,
+        },
+      }
+    end,
+  },
+
+  ------------------------------------- DEBUGGING -----------------------------------------
+
+  {
+    "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+  },
+
   --------------------------------- AI && AUTO-COMPLETE -----------------------------------
 
   {
@@ -123,8 +160,8 @@ local plugins = {
       "NeoAIInjectContextCode",
     },
     keys = {
-      { "<leader>as", desc = "summarize text" },
-      { "<leader>ag", desc = "generate git message" },
+      { "<leader>as", desc = "NEO_AI - summarize text" },
+      { "<leader>ag", desc = "NEO_AI - generate git message" },
     },
     config = function()
       require("neoai").setup {

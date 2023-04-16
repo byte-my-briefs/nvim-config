@@ -72,8 +72,11 @@ M.mason = {
     "clangd",
     "clang-format",
 
-    -- custom
+    -- rust
     "rust-analyzer",
+    "codelldb",
+
+    -- custom
     "svelte-language-server",
     "tailwindcss-language-server",
     "prisma-language-server",

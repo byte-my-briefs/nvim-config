@@ -1,3 +1,10 @@
+--------------------------------- PRE: NEOVIDE CONFIGURATION ----------------------------------------
+------------------------------ Note: Only runs IFF in Neovide. --------------------------------------
+
+if vim.g.neovide then
+  require "configs.neovide"
+end
+
 ------------------------------------------- GENERAL -------------------------------------------------
 
 vim.wo.relativenumber = true
