@@ -11,11 +11,11 @@ work without it. Though I used to run my own bootstrapped config, NvChad is just
 
 ## 🎪 Showcase
 
-![Start Screen](https://github.com/ByteMyBriefs/nvim-config/blob/main/demo/start_screen.png?raw=true)
+![Start Screen](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/start_screen.png?raw=true)
 
-![Default View of Editor](https://github.com/ByteMyBriefs/nvim-config/blob/main/demo/default.png?raw=true)
+![Default View of Editor](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/default.png?raw=true)
 
-![Noice Cmdline](https://github.com/ByteMyBriefs/nvim-config/blob/main/demo/noice.png?raw=true)
+![Noice Cmdline](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/noice.png?raw=true)
 
 ## 🛠️ Installation
 
