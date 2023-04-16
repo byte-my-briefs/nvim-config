@@ -105,6 +105,8 @@ as well.
 
   ++ **LspLines**
 
+  ++ (Extra) **Neovide Support**
+
 ## Conclusion (Parting Words)
 
 Lastly, please keep in mind that **working with Neovim can be hard and
