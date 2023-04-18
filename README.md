@@ -99,21 +99,21 @@ As well as linting and formatting using Null-ls with:
 
 - **Rust, Rust-analyzer, Rust tools**
 
-* **Enhanced Motion**
+### Enhanced Motion
 
-  - **Leap**
+- **Leap**
 
-  - **NeoScroll**
+- **NeoScroll**
 
-* **Beautiful UI**
+### Beautiful UI
 
-  - **NvChad**
+- **NvChad**
 
-  - **Noice**
+- **Noice**
 
-  - **LspLines**
+- **LspLines**
 
-  - (Extra) **Neovide Support**
+- (Extra) **Neovide Support**
 
 ## Conclusion (Parting Words)
 

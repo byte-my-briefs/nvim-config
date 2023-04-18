@@ -37,14 +37,8 @@ vim.g.minimap_background_processing = 0
 -- Since "cmp" cannot be not found, a fatal error is raised.
 
 --
---local cmp = require "cmp"
--- cmp.opts.sources = cmp.config.sources(vim.list_extend(cmp.opts.sources, { { name = "copilot" } }))
-
 -- TODO: dlelet this if not helpful
 -- vim.g.copilot_assume_mapped = true
-
--- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
--- table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 
 ---------------------------------------- AUTO-COMMANDS ---------------------------------------------
 
