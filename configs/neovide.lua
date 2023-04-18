@@ -18,4 +18,5 @@ vim.g.neovide_background_color = "#0f1117" .. alpha()
 
 -------------------------------- Full Screen Support ----------------------------------
 
-vim.g.neovide_fullscreen = true
+-- vim.g.neovide_fullscreen = true
+vim.g.neovide_remember_window_size = true

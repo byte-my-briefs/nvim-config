@@ -7,7 +7,9 @@ However, anyone else who is interested can certainly benefit from it as well.
 
 It is an extension of [NvChad](https://github.com/NvChad/NvChad) and will not
 work without it. Though I used to run my own bootstrapped config, NvChad is just
-**absolutely beautiful**.
+absolutely beautiful, and using it saves a lot of headache when it comes to
+configuring our UI. Outsourcing this decision to those much more adept at design
+than me only makes sense.
 
 ## 🎪 Showcase
 
@@ -26,18 +28,22 @@ work without it. Though I used to run my own bootstrapped config, NvChad is just
    [here](https://github.com/neovim/neovim/wiki/Installing-Neovim).
 
 2. **NvChad**: Next, set up NvChad per their
-   [instructions](https://nvchad.com/docs/quickstart/install). (**Note**: They
-   reccomend having a Nerd font installed (and I do as well). It will allow you
-   to take full advantage of their beautiful UI, and especially any and all
-   glyph/icon-related features. Installation is easy and a great tutorial can be
-   found [here](https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/).
-   Additionally, please see [NerdFonts.com](https://www.nerdfonts.com/)) for a
-   fantastic collection of the most popular nerd fonts.
+   [instructions](https://nvchad.com/docs/quickstart/install).
+
+   > **Note**: They reccomend having a Nerd font installed (and I do as well).
+   > It will allow you to take full advantage of their beautiful UI, and
+   > especially any and all glyph/icon-related features. Installation is easy
+   > and a great tutorial can be found
+   > [here](https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/).
+   > Additionally, please see [NerdFonts.com](https://www.nerdfonts.com/) for a
+   > fantastic collection of the most popular nerd fonts.
 
 3. **Clone this Repository**: Once NvChad is installed, delete all of the
-   contents of `./lua/custom`. Once that is done, simply clone this repository
-   into that folder. Next, quit Neovim and open it back up. Lazy.nvim (your new
-   plugin manager) will download all of the plugins you need and then...
+   contents of `./lua/custom`.
+   - Once that is done, simply clone this repository into that folder.
+   - Next, quit Neovim and open it back up.
+   - Lazy.nvim (your new plugin manager) will download all of the plugins you
+     need and then...
 
 🎊🎉 VOILA 🎉🎊.
 
@@ -50,68 +56,68 @@ quick.
 ++ **Copilot.lua && cmp-copilot**: Once all plugins are installed, simply enter
 the command `"Copilot auth` and login to your Github account. If you have any
 issues, please see their full documentation
-[here](https://github.com/zbirenbaum/copilot.lua). Note: that an active Copilot
-account is required.
+[here](https://github.com/zbirenbaum/copilot.lua).
+
+> **Note**: An active Copilot account is required.
 
 ++ **ChatGPT.nvim && NeoAI**: Set environment variable called $OPENAI_API_KEY
 which you can obtain [here](https://platform.openai.com/account/api-keys). Full
 instructions can be found [here](https://github.com/jackMort/ChatGPT.nvim) and
-[here](https://github.com/Bryley/neoai.nvim) respectively. Note: An active
-OpenAI API Key is required, but a free key will likely last you a very long time
-by itself.
+[here](https://github.com/Bryley/neoai.nvim) respectively.
+
+> **Note**: An active OpenAI API Key is required, but a free key will likely
+> last you a very long time by itself.
 
 ## Primary Features
 
-In addition to the wonderful theming and UI provided by NvChad, this
-configuration also offers:
+In addition to the theming and UI provided by NvChad, this configuration also
+offers:
 
 ### First-Class AI Integration
 
-++ **Copilot.lua** by [zbirenbaum](https://github.com/zbirenbaum)
+- **Copilot.lua** by [zbirenbaum](https://github.com/zbirenbaum)
 
-++ **Cmp-copilot** by [zbirenbaum](https://github.com/zbirenbaum)
+- **Cmp-copilot** by [zbirenbaum](https://github.com/zbirenbaum)
 
-++ **ChatGpt** by [jackMort](https://github.com/jackMort)
+- **ChatGpt** by [jackMort](https://github.com/jackMort)
 
-++ **NeoAI** by [Bryley](https://github.com/Bryley)
+- **NeoAI** by [Bryley](https://github.com/Bryley)
 
 #### Out-of-the-Box Support for All Major Languages
 
-++ **LSPs && Linters && Formatters**
+- **LSPs && Linters && Formatters**
 
-++ **Node.js/Javascript/Typescript**, as well as support for:
+- **Node.js/Javascript/Typescript**, as well as support for:
 
-++ Svelte, and
+- **Svelte**, and
 
-++ React
+- **React**
 
-as well.
+As well as linting and formatting using Null-ls with:
 
-++ **Eslint, Prettier, etc.**
+- **Eslint, Prettier, etc.**
 
-++ **Rust, Rust-analyzer, Rust tools**
+- **Rust, Rust-analyzer, Rust tools**
 
-- **Enhanced Motion**
+* **Enhanced Motion**
 
-  ++ **Leap**
+  - **Leap**
 
-  ++ **NeoScroll**
+  - **NeoScroll**
 
-- **Beautiful UI**
+* **Beautiful UI**
 
-  ++ **NvChad**
+  - **NvChad**
 
-  ++ **Noice**
+  - **Noice**
 
-  ++ **LspLines**
+  - **LspLines**
 
-  ++ (Extra) **Neovide Support**
+  - (Extra) **Neovide Support**
 
 ## Conclusion (Parting Words)
 
 Lastly, please keep in mind that **working with Neovim can be hard and
 confusing** at times. This is especially true when you are first getting into
-it. So please feel free to reach out to me on here, or at my email at ..., any
-time you need help. I've really grown to love this platform and this community
-over time and I am **more than happy** to help anyone get comfortable using it
-themselves.
+it. Please feel free to reach out to me on here any time you need help; I am
+**more than happy** to help anyone get comfortable using it themselves.
