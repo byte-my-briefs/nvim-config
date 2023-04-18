@@ -33,10 +33,7 @@ vim.g.minimap_auto_start_win_enter = 0
 vim.g.minimap_width = 5
 vim.g.minimap_highlight_search = 1
 vim.g.minimap_background_processing = 0
--- NOTE: these will break Nvim if re-enabled.
--- Since "cmp" cannot be not found, a fatal error is raised.
 
---
 -- TODO: dlelet this if not helpful
 -- vim.g.copilot_assume_mapped = true
 
@@ -50,3 +47,12 @@ vim.g.minimap_background_processing = 0
 --   command = "tabdo wincmd =",
 -- })
 --
+--
+-- NOTE: Disable semantic highlighting as it is not currently working with lua_ls.
+-- See comments to https://www.reddit.com/r/neovim/comments/zjqquc/how_do_i_turn_off_semantic_tokens/.
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+})

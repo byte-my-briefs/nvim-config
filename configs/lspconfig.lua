@@ -44,10 +44,7 @@ end
 
 -- lspconfig.pyright.setup { blabla }
 
--- NOTE: This shit FUCKS EVERYTHING UP!!!!!!!!!!! If you are having issues with LSPs/intellisense,
--- disable the below it; it will work without a doubt.
--- FUCK FUCK FUCK FUCK FUCK
--- A WHOLE DAY WASTED ON THIS SHIT.
+-- NOTE: Custom config for lua_ls; we need to pass several specific options.
 
 lspconfig.lua_ls.setup {
   on_attach = on_attach,
@@ -65,6 +62,13 @@ lspconfig.lua_ls.setup {
         library = vim.api.nvim_get_runtime_file("", true),
         checkThirdParty = false,
       },
+      semantics = {
+        -- NOTE: Disable semantic highlighting as it is not currently working with lua_ls.
+        -- See https://github.com/dracula/vim/issues/290#issuecomment-1417699846.
+        enabled = false,
+        keyword = false,
+        variable = false,
+      },
       -- Do not send telemetry data containing a randomized but unique identifier
       -- telemetry = { enable = false },
       -- },
@@ -72,8 +76,8 @@ lspconfig.lua_ls.setup {
   },
 }
 
--- NOTE: do *NOT* add new setups like the below also re-passing
--- 'on_attach' and 'capabilities' (ass seen above)
+-- NOTE: do *NOT* add new setups like the below UNLESS also re-passing
+-- 'on_attach' and 'capabilities' (ass seen above); it will fuck everything up.
 
 -- lspconfig.tsserver.setup {}
 -- lspconfig.prismals.setup {}

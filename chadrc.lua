@@ -7,7 +7,7 @@ local highlights = require "custom.highlights"
 ----------------------------------------- UI -------------------------------------------
 
 M.ui = {
-  -- also see: "chadtain", "doomchad", "bearded-arc", "everforest"
+  -- also :: "chadtain", "doomchad", "bearded-arc", "everforest"
   theme = "doomchad",
   theme_toggle = { "doomchad", "everforest" },
   transparency = false,
