@@ -7,22 +7,18 @@ local highlights = require "custom.highlights"
 ----------------------------------------- UI -------------------------------------------
 
 M.ui = {
-  -- also :: "chadtain", "doomchad", "bearded-arc", "everforest"
+  -- also see: "chadtain", "doomchad", "doomchad", "everforest"
   theme = "doomchad",
   theme_toggle = { "doomchad", "everforest" },
-  transparency = false,
-
+  transparency = true,
   hl_override = highlights.override,
   hl_add = highlights.add,
-
   telescope = {
     style = "bordered",
   },
-
   nvdash = {
     load_on_startup = true,
   },
-
   statusline = {
     -- default/vscode/vscode_colored/minimal
     theme = "default",
@@ -31,10 +27,18 @@ M.ui = {
     separator_style = "default",
     -- overriden_modules = nil,
   },
-
   tabufline = {
     lazyload = true,
     -- overriden_modules = nil,
+  },
+  changed_themes = {
+    doomchad = {
+      base_30 = {
+        -- adust comment colors so they are visible with transparent bg
+        grey = "",
+        grey_fg = "",
+      },
+    },
   },
 }
 

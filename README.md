@@ -6,10 +6,15 @@ are interested can easily make the transition to Nvim from other editors.
 However, anyone else who is interested can certainly benefit from it as well.
 
 It is an extension of [NvChad](https://github.com/NvChad/NvChad) and will not
-work without it. Though I used to run my own bootstrapped config, NvChad is just
+work without it. Though I used to run my own bootstrapped config, NvChad is
 absolutely beautiful, and using it saves a lot of headache when it comes to
 configuring our UI. Outsourcing this decision to those much more adept at design
 than me only makes sense.
+
+> Note: NvChad also comes with some other batteries included as well, such as
+> LSP support, Treesitter, and nvim-cmp. These, however, can be fully configured
+> to our liking in './chadrc'. Please see their
+> [documentation](https://nvchad.com/) for more information.
 
 ## 🎪 Showcase
 
@@ -19,7 +24,7 @@ than me only makes sense.
 
 ![Noice Cmdline](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/noice.png?raw=true)
 
-## 🛠️ Installation
+## 🛠️ Installation / Setup
 
 ### 🕓 Estimated Setup Time: 15 minutes
 
@@ -38,12 +43,14 @@ than me only makes sense.
    > Additionally, please see [NerdFonts.com](https://www.nerdfonts.com/) for a
    > fantastic collection of the most popular nerd fonts.
 
-3. **Clone this Repository**: Once NvChad is installed, delete all of the
-   contents of `./lua/custom`.
-   - Once that is done, simply clone this repository into that folder.
-   - Next, quit Neovim and open it back up.
-   - Lazy.nvim (your new plugin manager) will download all of the plugins you
-     need and then...
+3. **Clone this Repository**: Once NvChad is installed, delete the
+   `./lua/custom` directory.
+   - Next, simply clone this repository into that folder like so:
+   ```
+   npx degit https://github.com/ByteMyBriefs/nvim-config custom/
+   ```
+   - After that, simply open up Neovim; Lazy.nvim (your new plugin manager) will
+     now download all of the plugins you need and then...
 
 🎊🎉 VOILA 🎉🎊.
 
@@ -75,45 +82,42 @@ offers:
 
 ### First-Class AI Integration
 
-- **Copilot.lua** by [zbirenbaum](https://github.com/zbirenbaum)
+- **[Copilot.lua](https://github.com/zbirenbaum/copilot.lua)** by zbirenbaum
 
-- **Cmp-copilot** by [zbirenbaum](https://github.com/zbirenbaum)
+- **[Cmp-copilot](https://github.com/zbirenbaum/copilot-cmp)** by zbirenbaum
 
-- **ChatGpt** by [jackMort](https://github.com/jackMort)
+- **[ChatGpt](https://github.com/jackMort/ChatGPT.nvim)** by jackMort
 
-- **NeoAI** by [Bryley](https://github.com/Bryley)
+- **[NeoAI](https://github.com/Bryley/neoai.nvim)** by Bryley
 
-#### Out-of-the-Box Support for All Major Languages
+### Out-of-the-Box Support for All Major Languages
 
-- **LSPs && Linters && Formatters**
+- **Python**: LSP, flake8
+- **Javascript / Typescript**: LSPs, Eslint server, Prettier server
+- **Rust**: Rust-tools by [simrat39](https://github.com/simrat39) (includes
+  Rust-Analyzer and full debugging support) and Rustfmt
+- **Go**: LSP, Gofmt, Goimports
 
-- **Node.js/Javascript/Typescript**, as well as support for:
+**As well as full IDE support for**:
 
 - **Svelte**, and
-
-- **React**
-
-As well as linting and formatting using Null-ls with:
-
-- **Eslint, Prettier, etc.**
-
-- **Rust, Rust-analyzer, Rust tools**
+- **React**.
 
 ### Enhanced Motion
 
-- **Leap**
+- **[Leap](https://github.com/ggandor/leap.nvim)** by ggandor
 
-- **NeoScroll**
+- **[NeoScroll](https://github.com/karb94/neoscroll.nvim)** by karb94
 
 ### Beautiful UI
 
-- **NvChad**
+- **[NvChad](https://github.com/NvChad/NvChad)**
 
-- **Noice**
+- **[Noice](https://github.com/folke/noice.nvim)** by folke
 
-- **LspLines**
+- **[LspLines](https://git.sr.ht/~whynothugo/lsp_lines.nvim)** by whynothugo
 
-- (Extra) **Neovide Support**
+- (Extra) **[Neovide](https://neovide.dev/) Support**
 
 ## Conclusion (Parting Words)
 

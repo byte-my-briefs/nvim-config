@@ -7,6 +7,10 @@ M.general = {
   },
 }
 
+-- LSP LINES
+-- See https://git.sr.ht/~whynothugo/lsp_lines.nvim#usage
+-- vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
+
 -- Hover actions
 -- vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
 -- Code action groups

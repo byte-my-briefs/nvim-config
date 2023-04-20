@@ -45,6 +45,37 @@ local plugins = {
     end,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "VeryLazy",
+    config = function()
+      -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
+      vim.opt.termguicolors = true
+      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+
+      -- vim.opt.list = true
+      -- vim.opt.listchars:append "space:⋅"
+
+      require("indent_blankline").setup {
+        -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
+        space_char_blankline = " ",
+        char_highlight_list = {
+          "IndentBlanklineIndent1",
+          "IndentBlanklineIndent2",
+          "IndentBlanklineIndent3",
+          "IndentBlanklineIndent4",
+          "IndentBlanklineIndent5",
+          "IndentBlanklineIndent6",
+        },
+      }
+    end,
+  },
+
   ---------------------------------------- RUST ------------------------------------------
 
   {
@@ -75,6 +106,23 @@ local plugins = {
     end,
   },
 
+  ----------------------------------------- GO -------------------------------------------
+
+  {
+    -- See https://github.com/ray-x/go.nvim
+    "ray-x/go.nvim",
+    event = { "CmdlineEnter" },
+    dependencies = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup()
+    end,
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+  },
   ------------------------------------- DEBUGGING -----------------------------------------
 
   {
@@ -273,6 +321,17 @@ local plugins = {
         inc_rename = false,
         lsp_doc_border = false,
       },
+      -- messages = {
+      --   -- NOTE: If you enable messages, then the cmdline is enabled automatically.
+      --   -- This is a current Neovim limitation.
+      --
+      --   enabled = true, -- enables the Noice messages UI
+      --   view = "mini", -- default view for messages
+      --   view_error = "notify", -- view for errors
+      --   view_warn = "notify", -- view for warnings
+      --   view_history = "messages", -- view for :messages
+      --   view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+      -- },
     },
     dependencies = {
       "MunifTanjim/nui.nvim",
@@ -308,6 +367,8 @@ local plugins = {
     event = "VeryLazy", -- previously: 'BufEnter'
     config = function()
       require("lsp_lines").setup()
+      -- TODO: test this keybind; not sure if it is working.
+      vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
     end,
   },
 

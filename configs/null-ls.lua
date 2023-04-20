@@ -37,11 +37,13 @@ local sources = {
   formatting.stylua,
   formatting.clang_format,
 
-  formatting.gofmt,
-  formatting.goimports,
-
   formatting.rustfmt,
+
   -- b.formatting.prismaFmt,
+
+  -- Handled by Go.nvim (see https://github.com/ray-x/go.nvim)
+  -- formatting.gofmt,
+  -- formatting.goimports,
 
   ----------------------------------- CODE ACTIONS --------------------------------------
   code_actions.eslint_d,

@@ -22,7 +22,8 @@ vim.g.italic_variables = false
 vim.diagnostic.config {
   virtual_text = false,
   virtual_lines = {
-    only_current_line = true,
+    -- FIX: likely re-enable this
+    -- only_current_line = true,
   },
 }
 
@@ -47,7 +48,18 @@ vim.g.minimap_background_processing = 0
 --   command = "tabdo wincmd =",
 -- })
 --
---
+
+-- Configure Go file formatting.
+-- See https://github.com/ray-x/go.nvim.
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    require("go.format").goimport()
+  end,
+  group = format_sync_grp,
+})
+
 -- NOTE: Disable semantic highlighting as it is not currently working with lua_ls.
 -- See comments to https://www.reddit.com/r/neovim/comments/zjqquc/how_do_i_turn_off_semantic_tokens/.
 vim.api.nvim_create_autocmd("LspAttach", {
