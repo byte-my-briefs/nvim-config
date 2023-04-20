@@ -18,15 +18,18 @@ local servers = {
   "clangd",
   "lua_ls",
 
-  "prismals",
+  "pyright",
+
   "svelte",
   "tailwindcss",
   "emmet_ls",
+
+  "prismals",
+
   "bashls",
 
-  -- NOTE: Rust-analyzer is included, but is loaded automatically by Rust-tools,
-  -- so do NOT turn this on. See https://github.com/simrat39/rust-tools.nvim#setup
-  -- for more information.
+  -- NOTE: Rust-analyzer is included, but is loaded automatically by Rust-tools, so do NOT turn this on.
+  -- See https://github.com/simrat39/rust-tools.nvim#setup for more information.
   --
   -- "rust_analyzer",
 }

@@ -14,7 +14,7 @@ local b = null_ls.builtins
 
 local code_actions = null_ls.builtins.code_actions
 local formatting = b.formatting
--- local diagnostics = null_ls.builtins.diagnostics
+local diagnostics = null_ls.builtins.diagnostics
 -- local hover = null_ls.builtins.hover
 -- local completion = null_ls.builtins.completions
 
@@ -36,6 +36,11 @@ local sources = {
   },
   formatting.stylua,
   formatting.clang_format,
+
+  diagnostics.flake8,
+  diagnostics.mypy,
+  formatting.black,
+  formatting.isort,
 
   formatting.rustfmt,
 

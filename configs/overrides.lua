@@ -72,6 +72,14 @@ M.mason = {
     "clangd",
     "clang-format",
 
+    -- python
+    "pyright",
+    -- "jedi-language-server",
+    "black",
+    "isort",
+    "flake8",
+    "mypy",
+
     -- rust
     "rust-analyzer",
     "codelldb",
