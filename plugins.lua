@@ -270,8 +270,8 @@ local plugins = {
       "NeoAIInjectContextCode",
     },
     keys = {
-      { "<leader>as", desc = "NeoAI - summarize selected text" },
-      { "<leader>ag", desc = "NeoAI - generate git message" },
+      { "<leader>As", desc = "NeoAI - summarize selected text" },
+      { "<leader>Ag", desc = "NeoAI - generate git message" },
     },
     config = function()
       require("neoai").setup {}
@@ -304,55 +304,6 @@ local plugins = {
       require("neoscroll").setup()
     end,
   },
-
-  -- {
-  --   "edluffy/specs.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("specs").setup {
-  --       show_jumps = true,
-  --       min_jump = 8,
-  --       popup = {
-  --         delay_ms = 0, -- delay before popup displays
-  --         inc_ms = 10, -- time increments used for fade/resize effects
-  --         blend = 10, -- starting blend, between 0-100 (fully transparent), see :h winblend
-  --         width = 10,
-  --         winhl = "PMenu",
-  --         fader = require("specs").pulse_fader,
-  --         resizer = require("specs").shrink_resizer,
-  --       },
-  --       ignore_filetypes = {},
-  --       ignore_buftypes = {
-  --         nofile = true,
-  --       },
-  --     }
-  --   end,
-  -- },
-
-  -- {
-  --   "echasnovski/mini.animate",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("mini.animate").setup {
-  --       cursor = {
-  --         -- Animate for 200 milliseconds with linear easing
-  --         timing = require("mini.animate").gen_timing.quadratic {
-  --           duration = 200,
-  --           unit = "total",
-  --         },
-  --         -- Animate with shortest line for any cursor move
-  --         path = require("mini.animate").gen_path.line {
-  --           predicate = function()
-  --             return true
-  --           end,
-  --         },
-  --       },
-  --       scroll = { enable = false },
-  --       open = { enable = false },
-  --       close = { enable = false },
-  --     }
-  --   end,
-  -- },
 
   ------------------------------------------ UI -------------------------------------------
 
@@ -414,16 +365,14 @@ local plugins = {
     end,
   },
 
-  -- {
-  --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  --   event = "VeryLazy", -- previously: 'BufEnter'
-  --   config = function()
-  --     require("lsp_lines").setup()
-  --     -- TODO: test this keybind; not sure if it is working.
-  --     vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
-  --   end,
-  -- },
-  --
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    event = "BufEnter", -- previously: 'VeryLazy'
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  },
+
   {
     -- see './init.lua' for config options (since it is Vim native)
     "wfxr/minimap.vim",

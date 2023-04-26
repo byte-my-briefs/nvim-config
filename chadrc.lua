@@ -7,9 +7,9 @@ local highlights = require "custom.highlights"
 ----------------------------------------- UI -------------------------------------------
 
 M.ui = {
-  -- also see: "chadtain", "palenight", "palenight", "palenight"
-  theme = "palenight",
-  theme_toggle = { "palenight", "palenight" },
+  -- also see: "penumbra_dark", "penumbra_dark", "penumbra_dark", "penumbra_dark"
+  theme = "penumbra_dark",
+  theme_toggle = { "penumbra_dark", "penumbra_dark" },
   transparency = false,
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -32,7 +32,7 @@ M.ui = {
     -- overriden_modules = nil,
   },
   -- changed_themes = {
-  -- palenight = {
+  -- penumbra_dark = {
   -- base_30 = {
   -- adust comment colors so they are visible with transparent bg
   -- grey = "",

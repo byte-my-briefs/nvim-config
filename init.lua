@@ -8,7 +8,7 @@ end
 ------------------------------------------- GENERAL -------------------------------------------------
 
 vim.wo.relativenumber = true
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.g.italic_comments = true
 vim.g.italic_keywords = true
@@ -22,7 +22,6 @@ vim.g.italic_variables = false
 vim.diagnostic.config {
   virtual_text = false,
   virtual_lines = {
-    -- FIX: likely re-enable this
     -- only_current_line = true,
   },
 }
@@ -34,9 +33,6 @@ vim.g.minimap_auto_start_win_enter = 0
 vim.g.minimap_width = 5
 vim.g.minimap_highlight_search = 1
 vim.g.minimap_background_processing = 0
-
--- TODO: dlelet this if not helpful
--- vim.g.copilot_assume_mapped = true
 
 ---------------------------------------- AUTO-COMMANDS ---------------------------------------------
 

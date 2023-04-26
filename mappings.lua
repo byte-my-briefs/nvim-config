@@ -17,64 +17,54 @@ M.disabled = {
 M.ai = {
   n = {
     -- NeoAI
-    ["<leader>aa"] = { "<cmd>NeoAI<cr>", "NeoAI - Normal Mode" },
-    ["<leader>ac"] = { "<cmd>NeoAIContext<cr>", "NeoAI - Context Mode" },
-    ["<leader>ai"] = { "<cmd>NeoAIInject<cr>", "NeoAI - Inject Mode" },
+    ["<leader>Aa"] = { "<cmd>NeoAI<cr>", "NeoAI - Normal Mode" },
+    ["<leader>Ac"] = { "<cmd>NeoAIContext<cr>", "NeoAI - Context Mode" },
+    ["<leader>Ai"] = { "<cmd>NeoAIInject<cr>", "NeoAI - Inject Mode" },
     -- ChatGPT.nvim
     ["<leader>Cc"] = { "<cmd>ChatGPT<cr>", "ChatGPT - Normal Mode" },
     ["<leader>Ca"] = { "<cmd>ChatGPTActAs<cr>", "ChatGPT - Act As" },
     ["<leader>Ce"] = { "<cmd>ChatGPTEditWithInstructions<cr>", "ChatGPT - Edit With Instructions" },
-
-    -- Noice
-    ["<leader>nh"] = { "<cmd>Noice history<cr>", "Noice - History" },
-    ["<leader>nl"] = { "<cmd>Noice last<cr>", "Noice - Last Message" },
-    ["<leader>nd"] = { "<cmd>Noice dismiss<cr>", "Noice - Dismiss Current Messages" },
-    ["<leader>ne"] = { "<cmd>Noice errors<cr>", "Noice - Errors" },
-    ["<leader>ns"] = { "<cmd>Noice stats<cr>", "Noice - Stats" },
-    ["<leader>nt"] = { "<cmd>Noice telescope<cr>", "Noice - Telescope" },
   },
 }
 
--- which_key.mappings["C"] = {
---   name = "+ChatGPT",
---   c = { "<cmd>ChatGPT<cr>", "ChatGPT - Chat" },
---   a = { "<cmd>ChatGPTActAs<cr>", "ChatGPT - Act As" },
---   e = { "<cmd>ChatGPTEditWithInstructions<cr>", "ChatGPT - Edit With Instructions" },
--- }
+M.Noice = {
+  n = {
+    -- Noice
+    ["<leader>Nh"] = { "<cmd>Noice history<cr>", "Noice - History" },
+    ["<leader>Nl"] = { "<cmd>Noice last<cr>", "Noice - Last Message" },
+    ["<leader>Nd"] = { "<cmd>Noice dismiss<cr>", "Noice - Dismiss Current Messages" },
+    ["<leader>Ne"] = { "<cmd>Noice errors<cr>", "Noice - Errors" },
+    ["<leader>Ns"] = { "<cmd>Noice stats<cr>", "Noice - Stats" },
+    ["<leader>Nt"] = { "<cmd>Noice telescope<cr>", "Noice - Telescope" },
+  },
+}
 
--- LSP LINES
--- See https://git.sr.ht/~whynothugo/lsp_lines.nvim#usage
--- vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
+M.Trouble = {
+  n = {
+    -- Trouble
+    ["<leader>Tr"] = { "<cmd>Trouble lsp_references<cr>", "Trouble - References" },
+    ["<leader>Td"] = { "<cmd>Trouble lsp_definitions<cr>", "Trouble - Definitions" },
+    ["<leader>Tg"] = { "<cmd>Trouble document_diagnostics<cr>", "Trouble - Diagnostics" },
+    ["<leader>Tq"] = { "<cmd>Trouble quickfix<cr>", "Trouble - QuickFix" },
+    ["<leader>Tl"] = { "<cmd>Trouble loclist<cr>", "Trouble - LocationList" },
+    ["<leader>Tw"] = { "<cmd>Trouble workspace_diagnostics<cr>", "Trouble - Workspace Diagnostics" },
+  },
+}
 
--- Hover actions
--- vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
--- Code action groups
--- vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+M.LspLines = {
+  n = {
+    -- LSP LINES
+    ["<leader>ll"] = { "<cmd>lua require('lsp_lines').toggle()<cr>", "LSP_LINES - Toggle" },
+  },
+}
 
 -- more keybinds!
 
 -- which_key.mappings["t"] = {
---   name = "+Terminal",
+--    name = "+Terminal",
 --   f = { "<cmd>ToggleTerm<cr>", "Floating terminal" },
 --   v = { "<cmd>2ToggleTerm size=30 direction=vertical<cr>", "Split vertical" },
 --   h = { "<cmd>2ToggleTerm size=12 direction=horizontal<cr>", "Split horizontal" },
 -- }
--- which_key.mappings["z"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
--- }
---
--- which_key.mappings["C"] = {
---   name = "+ChatGPT",
---   c = { "<cmd>ChatGPT<cr>", "ChatGPT - Chat" },
---   a = { "<cmd>ChatGPTActAs<cr>", "ChatGPT - Act As" },
---   e = { "<cmd>ChatGPTEditWithInstructions<cr>", "ChatGPT - Edit With Instructions" },
--- }
---
 
 return M
