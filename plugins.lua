@@ -120,7 +120,7 @@ local plugins = {
     end,
   },
 
-  ---------------------------------------- RUST ------------------------------------------
+  --------------------------------------- RUST ------------------------------------------
 
   {
     "simrat39/rust-tools.nvim",
@@ -270,8 +270,8 @@ local plugins = {
       "NeoAIInjectContextCode",
     },
     keys = {
-      { "<leader>as", desc = "NEO_AI - summarize text" },
-      { "<leader>ag", desc = "NEO_AI - generate git message" },
+      { "<leader>as", desc = "NeoAI - summarize selected text" },
+      { "<leader>ag", desc = "NeoAI - generate git message" },
     },
     config = function()
       require("neoai").setup {}
@@ -381,17 +381,9 @@ local plugins = {
         inc_rename = false,
         lsp_doc_border = false,
       },
-      -- messages = {
-      --   -- NOTE: If you enable messages, then the cmdline is enabled automatically.
-      --   -- This is a current Neovim limitation.
-      --
-      --   enabled = true, -- enables the Noice messages UI
-      --   view = "mini", -- default view for messages
-      --   view_error = "notify", -- view for errors
-      --   view_warn = "notify", -- view for warnings
-      --   view_history = "messages", -- view for :messages
-      --   view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
-      -- },
+      config = function()
+        require("noice").setup {}
+      end,
     },
     dependencies = {
       "MunifTanjim/nui.nvim",

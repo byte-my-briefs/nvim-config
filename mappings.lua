@@ -7,6 +7,41 @@ M.general = {
   },
 }
 
+M.disabled = {
+  n = {
+    ["<leader>n"] = "",
+    ["<leader>rn"] = "",
+  },
+}
+
+M.ai = {
+  n = {
+    -- NeoAI
+    ["<leader>aa"] = { "<cmd>NeoAI<cr>", "NeoAI - Normal Mode" },
+    ["<leader>ac"] = { "<cmd>NeoAIContext<cr>", "NeoAI - Context Mode" },
+    ["<leader>ai"] = { "<cmd>NeoAIInject<cr>", "NeoAI - Inject Mode" },
+    -- ChatGPT.nvim
+    ["<leader>Cc"] = { "<cmd>ChatGPT<cr>", "ChatGPT - Normal Mode" },
+    ["<leader>Ca"] = { "<cmd>ChatGPTActAs<cr>", "ChatGPT - Act As" },
+    ["<leader>Ce"] = { "<cmd>ChatGPTEditWithInstructions<cr>", "ChatGPT - Edit With Instructions" },
+
+    -- Noice
+    ["<leader>nh"] = { "<cmd>Noice history<cr>", "Noice - History" },
+    ["<leader>nl"] = { "<cmd>Noice last<cr>", "Noice - Last Message" },
+    ["<leader>nd"] = { "<cmd>Noice dismiss<cr>", "Noice - Dismiss Current Messages" },
+    ["<leader>ne"] = { "<cmd>Noice errors<cr>", "Noice - Errors" },
+    ["<leader>ns"] = { "<cmd>Noice stats<cr>", "Noice - Stats" },
+    ["<leader>nt"] = { "<cmd>Noice telescope<cr>", "Noice - Telescope" },
+  },
+}
+
+-- which_key.mappings["C"] = {
+--   name = "+ChatGPT",
+--   c = { "<cmd>ChatGPT<cr>", "ChatGPT - Chat" },
+--   a = { "<cmd>ChatGPTActAs<cr>", "ChatGPT - Act As" },
+--   e = { "<cmd>ChatGPTEditWithInstructions<cr>", "ChatGPT - Edit With Instructions" },
+-- }
+
 -- LSP LINES
 -- See https://git.sr.ht/~whynothugo/lsp_lines.nvim#usage
 -- vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
@@ -41,13 +76,5 @@ M.general = {
 --   e = { "<cmd>ChatGPTEditWithInstructions<cr>", "ChatGPT - Edit With Instructions" },
 -- }
 --
-
--- MINIMAP
---Minimap	Show minimap window
--- MinimapClose	Close minimap window
--- MinimapToggle	Toggle minimap window
--- MinimapRefresh	Force refresh minimap window
--- MinimapUpdateHighlight	Force update minimap highlight
--- MinimapRescan	Force recalculation of minimap scaling ratio
 
 return M
