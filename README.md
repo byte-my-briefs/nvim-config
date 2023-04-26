@@ -1,20 +1,20 @@
 # ByteMyBriefs's Neovim Config
 
-This repository contains my current Neovim configuration. It is, and always,
-will remain up to date. I primarily decided to publish it so that my friends who
-are interested can easily make the transition to Nvim from other editors.
-However, anyone else who is interested can certainly benefit from it as well.
+This repository contains my current Neovim configuration. I primarily decided to
+publish it so that my friends who are interested in Neovim can easily make the
+transition from other editors. However, anyone else who is interested can
+certainly benefit from it as well.
 
 It is an extension of [NvChad](https://github.com/NvChad/NvChad) and will not
-work without it. Though I used to run my own bootstrapped config, NvChad is
+work without it. Though I used to run my own bootstrapped config, NvChad is just
 absolutely beautiful, and using it saves a lot of headache when it comes to
-configuring our UI. Outsourcing this decision to those much more adept at design
-than me only makes sense.
+configuring our UI.
 
-> Note: NvChad also comes with some other batteries included as well, such as
-> LSP support, Treesitter, and nvim-cmp. These, however, can be fully configured
-> to our liking in './chadrc'. Please see their
-> [documentation](https://nvchad.com/) for more information.
+> Note: NvChad comes with some basic batteries included. Most pertinently,
+> NvChad comes with LSP support, Treesitter, and nvim-cmp already
+> pre-configured. These, however, can be fully customized to our liking in
+> './chadrc'. Please refer to their [documentation](https://nvchad.com/) for
+> more information.
 
 ## 🎪 Showcase
 
@@ -40,17 +40,15 @@ than me only makes sense.
 
 ### 🕓 Estimated Setup Time: 15 minutes
 
-1. **Neovim**: The first step is to install Neovim itself. Installation
-   instructions for all platforms can be found
+1. **Neovim**: First, install Neovim. Installation instructions for all
+   platforms can be found
    [here](https://github.com/neovim/neovim/wiki/Installing-Neovim).
 
 2. **NvChad**: Next, set up NvChad per their
    [instructions](https://nvchad.com/docs/quickstart/install).
 
    > **Note**: They reccomend having a Nerd font installed (and I do as well).
-   > It will allow you to take full advantage of their beautiful UI, and
-   > especially any and all glyph/icon-related features. Installation is easy
-   > and a great tutorial can be found
+   > Installation is easy and a great tutorial can be found
    > [here](https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/).
    > Additionally, please see [NerdFonts.com](https://www.nerdfonts.com/) for a
    > fantastic collection of the most popular nerd fonts.
@@ -59,10 +57,10 @@ than me only makes sense.
    `./lua/custom` directory.
    - Next, simply clone this repository into that folder like so:
    ```
-   npx degit https://github.com/ByteMyBriefs/nvim-config custom/
+   npx degit https://github.com/ByteMyBriefs/nvim-config lua/custom
    ```
-   - After that, simply open up Neovim; Lazy.nvim (your new plugin manager) will
-     now download all of the plugins you need and then...
+   - Now, simply open up Neovim. Lazy.nvim (your new plugin manager) will
+     automatically begin installing all plugins, LSP servers, etc. After that...
 
 🎊🎉 VOILA 🎉🎊.
 
@@ -72,17 +70,18 @@ You should now be good to go ☺️.
 advantage, we need to quickly set up your AI tooling. These should be very
 quick.
 
-++ **Copilot.lua && cmp-copilot**: Once all plugins are installed, simply enter
-the command `"Copilot auth` and login to your Github account. If you have any
-issues, please see their full documentation
-[here](https://github.com/zbirenbaum/copilot.lua).
+- **Copilot.lua && cmp-copilot**: Once all plugins are installed, simply enter
+  the command `"Copilot auth` and login to your Github account. If you have any
+  issues, please see their full documentation
+  [here](https://github.com/zbirenbaum/copilot.lua).
 
 > **Note**: An active Copilot account is required.
 
-++ **ChatGPT.nvim && NeoAI**: Set environment variable called $OPENAI_API_KEY
-which you can obtain [here](https://platform.openai.com/account/api-keys). Full
-instructions can be found [here](https://github.com/jackMort/ChatGPT.nvim) and
-[here](https://github.com/Bryley/neoai.nvim) respectively.
+- **ChatGPT.nvim && NeoAI**: Set environment variable called $OPENAI_API_KEY
+  which you can obtain [here](https://platform.openai.com/account/api-keys).
+  Full instructions can be found
+  [here](https://github.com/jackMort/ChatGPT.nvim) and
+  [here](https://github.com/Bryley/neoai.nvim) respectively.
 
 > **Note**: An active OpenAI API Key is required, but a free key will likely
 > last you a very long time by itself.
