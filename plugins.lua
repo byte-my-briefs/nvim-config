@@ -55,34 +55,16 @@ local plugins = {
     end,
   },
 
+  ------------------------------------- REFACTORING -----------------------------------------
   {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "VeryLazy",
+    "ThePrimeagen/refactoring.nvim",
+    event = "BufEnter",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
     config = function()
-      -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
-      vim.opt.termguicolors = true
-      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
-
-      -- vim.opt.list = true
-      -- vim.opt.listchars:append "space:⋅"
-
-      require("indent_blankline").setup {
-        -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
-        space_char_blankline = " ",
-        char_highlight_list = {
-          "IndentBlanklineIndent1",
-          "IndentBlanklineIndent2",
-          "IndentBlanklineIndent3",
-          "IndentBlanklineIndent4",
-          "IndentBlanklineIndent5",
-          "IndentBlanklineIndent6",
-        },
-      }
+      require("refactoring").setup()
     end,
   },
 
@@ -383,6 +365,51 @@ local plugins = {
   ------------------------------------------- MISC. ---------------------------------------------
 
   {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "VeryLazy",
+    config = function()
+      -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
+      vim.opt.termguicolors = true
+      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
+      vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+
+      -- vim.opt.list = true
+      -- vim.opt.listchars:append "space:⋅"
+
+      require("indent_blankline").setup {
+        -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
+        space_char_blankline = " ",
+        char_highlight_list = {
+          "IndentBlanklineIndent1",
+          "IndentBlanklineIndent2",
+          "IndentBlanklineIndent3",
+          "IndentBlanklineIndent4",
+          "IndentBlanklineIndent5",
+          "IndentBlanklineIndent6",
+        },
+      }
+    end,
+  },
+
+  {
+    "itchyny/vim-cursorword",
+    event = { "BufEnter", "BufNewFile" },
+    config = function()
+      vim.api.nvim_command "augroup user_plugin_cursorword"
+      vim.api.nvim_command "autocmd!"
+      vim.api.nvim_command "autocmd FileType NvimTree,lspsagafinder,dashboard,vista let b:cursorword = 0"
+      vim.api.nvim_command "autocmd WinEnter * if &diff || &pvw | let b:cursorword = 0 | endif"
+      vim.api.nvim_command "autocmd InsertEnter * let b:cursorword = 0"
+      vim.api.nvim_command "autocmd InsertLeave * let b:cursorword = 1"
+      vim.api.nvim_command "augroup END"
+    end,
+  },
+
+  {
     "windwp/nvim-ts-autotag",
     event = "BufEnter",
     config = function()
@@ -406,20 +433,6 @@ local plugins = {
   {
     "HiPhish/nvim-ts-rainbow2",
     event = "VeryLazy",
-  },
-
-  {
-    "itchyny/vim-cursorword",
-    event = { "BufEnter", "BufNewFile" },
-    config = function()
-      vim.api.nvim_command "augroup user_plugin_cursorword"
-      vim.api.nvim_command "autocmd!"
-      vim.api.nvim_command "autocmd FileType NvimTree,lspsagafinder,dashboard,vista let b:cursorword = 0"
-      vim.api.nvim_command "autocmd WinEnter * if &diff || &pvw | let b:cursorword = 0 | endif"
-      vim.api.nvim_command "autocmd InsertEnter * let b:cursorword = 0"
-      vim.api.nvim_command "autocmd InsertLeave * let b:cursorword = 1"
-      vim.api.nvim_command "augroup END"
-    end,
   },
 }
 

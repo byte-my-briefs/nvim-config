@@ -14,6 +14,53 @@ M.disabled = {
   },
 }
 
+M.Refactoring = {
+  v = {
+
+    -- Remaps for the refactoring operations currently offered by the plugin
+    ["<leader>Re"] = {
+      "<Esc><cmd>lua require('refactoring').refactor('Extract Function')<cr>",
+      "Refactoring - Extract Function",
+      opts = { noremap = true, silent = true, expr = false },
+    },
+    ["<leader>Rf"] = {
+      "<Esc><cmd>lua require('refactoring').refactor('Extract Function to File')<cr>",
+      "Refactoring - Extract Function to File",
+      opts = { noremap = true, silent = true, expr = false },
+    },
+    ["<leader>Rv"] = {
+      "<Esc><cmd>lua require('refactoring').refactor('Extract Variable')<cr>",
+      "Refactoring - Extract Variable",
+      opts = { noremap = true, silent = true, expr = false },
+    },
+    ["<leader>Ri"] = {
+      "<Esc><cmd>lua require('refactoring').refactor('Inline Variable')<cr>",
+      "Refactoring - Inline Variable",
+      opts = { noremap = true, silent = true, expr = false },
+    },
+  },
+  n = {
+
+    -- Extract block doesn't need visual mode
+    ["<leader>Rbb"] = {
+      "<cmd>lua require('refactoring').refactor('Extract Block')<cr>",
+      "Refactoring - Extract Block",
+      opts = { noremap = true, silent = true, expr = false },
+    },
+    ["<leader>Rbf"] = {
+      "<cmd>lua require('refactoring').refactor('Extract Block to File')<cr>",
+      "Refactoring - Extract Block To File",
+      opts = { noremap = true, silent = true, expr = false },
+    },
+    -- Inline variable can also pick up the identifier currently under the cursor without visual mode
+    ["<leader>Ri"] = {
+      "<cmd>lua require('refactoring').refactor('Inline Variable')<cr>",
+      "Refactoring - Inline Variable",
+      opts = { noremap = true, silent = true, expr = false },
+    },
+  },
+}
+
 M.ai = {
   n = {
     -- NeoAI

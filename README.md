@@ -20,21 +20,13 @@ configuring our UI.
 
 ![Splash Screen](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/splash.png?raw=true)
 
-![Splash Screen - Light](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/splash_light.png?raw=true)
-
 ![Default View of Editor](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/buf.png?raw=true)
-
-![Noice Cmdline](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/cmd.png?raw=true)
 
 ![Noice Cmdline - Dracula](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/cmd_dracula.png?raw=true)
 
 ![Split Buffers](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/splitbufs.png?raw=true)
 
-![Split Buffers - With Explorer](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/splitbufs_with_explorer.png?raw=true)
-
 ![Keymap](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/keymap.png?raw=true)
-
-![Keymap - Light](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/keymap_light.png?raw=true)
 
 ## 🛠️ Installation / Setup
 
