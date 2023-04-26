@@ -34,6 +34,10 @@ vim.g.minimap_width = 5
 vim.g.minimap_highlight_search = 1
 vim.g.minimap_background_processing = 0
 
+-- UNDO_TREE.vim
+-- See https://github.com/mbbill/undotree.
+vim.g.undotree_WindowLayout = 4
+
 ---------------------------------------- AUTO-COMMANDS ---------------------------------------------
 
 -- EXAMPLE AUTO-COMMAND

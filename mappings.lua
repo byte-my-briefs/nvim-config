@@ -31,6 +31,12 @@ M.Persistence = {
   },
 }
 
+M.UndoTree = {
+  n = {
+    ["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "UndoTree - Toggle" },
+  },
+}
+
 M.Refactoring = {
   v = {
     -- Remaps for the refactoring operations currently offered by the plugin

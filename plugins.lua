@@ -106,10 +106,17 @@ local plugins = {
   {
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    -- module = "persistence",
+    module = "persistence",
     config = function()
       require("persistence").setup()
     end,
+  },
+
+  ----------------------------------- VERSION HISTORY --------------------------------------
+  {
+    "mbbill/undotree",
+    event = "VeryLazy",
+    -- See './init.lua' for config options
   },
 
   ----------------------------------------- RUST -------------------------------------------
