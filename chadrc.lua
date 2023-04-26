@@ -7,10 +7,10 @@ local highlights = require "custom.highlights"
 ----------------------------------------- UI -------------------------------------------
 
 M.ui = {
-  -- also see: "chadtain", "doomchad", "doomchad", "everforest"
-  theme = "doomchad",
-  theme_toggle = { "doomchad", "everforest" },
-  transparency = true,
+  -- also see: "chadtain", "palenight", "palenight", "palenight"
+  theme = "palenight",
+  theme_toggle = { "palenight", "palenight" },
+  transparency = false,
   hl_override = highlights.override,
   hl_add = highlights.add,
   telescope = {
@@ -31,15 +31,15 @@ M.ui = {
     lazyload = true,
     -- overriden_modules = nil,
   },
-  changed_themes = {
-    doomchad = {
-      base_30 = {
-        -- adust comment colors so they are visible with transparent bg
-        grey = "",
-        grey_fg = "",
-      },
-    },
-  },
+  -- changed_themes = {
+  -- palenight = {
+  -- base_30 = {
+  -- adust comment colors so they are visible with transparent bg
+  -- grey = "",
+  -- grey_fg = "",
+  -- },
+  -- },
+  -- },
 }
 
 --------------------------------- LOAD PLUGINS & MAPPINGS -----------------------------------

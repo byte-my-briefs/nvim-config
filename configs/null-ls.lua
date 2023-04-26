@@ -44,7 +44,7 @@ local sources = {
 
   formatting.rustfmt,
 
-  -- b.formatting.prismaFmt,
+  formatting.prismaFmt,
 
   -- Handled by Go.nvim (see https://github.com/ray-x/go.nvim)
   -- formatting.gofmt,

@@ -4,6 +4,16 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
   -------------------------------------- CORE ----------------------------------------
+  {
+    -- Note: This MUST come before lsp-config (See https://github.com/folke/neodev.nvim#-setup).
+    "folke/neodev.nvim",
+    config = function()
+      require("neodev").setup {
+        -- See https://github.com/rcarriga/nvim-dap-ui#configuration
+        library = { plugins = { "nvim-dap-ui" }, types = true },
+      }
+    end,
+  },
 
   {
     "neovim/nvim-lspconfig",
@@ -76,6 +86,40 @@ local plugins = {
     end,
   },
 
+  ------------------------------------- DEBUGGING -----------------------------------------
+  -- TODO: add adapters/configs for Python & JS
+  -- See https://github.com/mfussenegger/nvim-dap
+  -- See https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript-chrome
+  {
+    "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+  },
+
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "mfussenegger/nvim-dap",
+    },
+    config = function()
+      require("nvim-dap-virtual-text").setup {
+        virt_text_win_col = 80,
+        highlight_changed_variables = true,
+      }
+    end,
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "folke/neodev.nvim",
+    },
+    config = function()
+      require("dapui").setup {}
+    end,
+  },
+
   ---------------------------------------- RUST ------------------------------------------
 
   {
@@ -123,13 +167,6 @@ local plugins = {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
-  ------------------------------------- DEBUGGING -----------------------------------------
-
-  {
-    "mfussenegger/nvim-dap",
-    event = "VeryLazy",
-  },
-
   --------------------------------- AI && AUTO-COMPLETE -----------------------------------
 
   {
@@ -191,11 +228,16 @@ local plugins = {
 
   {
     "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
+    },
+    cmd = {
+      "ChatGPT",
+      "ChatGPTActAs",
+      "ChatGPTEditWithInstructions",
+      "ChatGPTRun",
     },
     config = function()
       require("chatgpt").setup {
@@ -232,9 +274,7 @@ local plugins = {
       { "<leader>ag", desc = "NEO_AI - generate git message" },
     },
     config = function()
-      require("neoai").setup {
-        -- Options go here
-      }
+      require("neoai").setup {}
     end,
   },
 
@@ -382,16 +422,16 @@ local plugins = {
     end,
   },
 
-  {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    event = "VeryLazy", -- previously: 'BufEnter'
-    config = function()
-      require("lsp_lines").setup()
-      -- TODO: test this keybind; not sure if it is working.
-      vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
-    end,
-  },
-
+  -- {
+  --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  --   event = "VeryLazy", -- previously: 'BufEnter'
+  --   config = function()
+  --     require("lsp_lines").setup()
+  --     -- TODO: test this keybind; not sure if it is working.
+  --     vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
+  --   end,
+  -- },
+  --
   {
     -- see './init.lua' for config options (since it is Vim native)
     "wfxr/minimap.vim",

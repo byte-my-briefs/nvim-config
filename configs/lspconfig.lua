@@ -12,11 +12,11 @@ local lspconfig = require "lspconfig"
 --            (2) AND added to the list of req'd Mason servers in './overrides.lua.'
 local servers = {
   -- TODO: install PYTHON LSP (jedi or Pyright).
+  "lua_ls",
   "html",
   "cssls",
   "tsserver",
   "clangd",
-  "lua_ls",
 
   "pyright",
 
