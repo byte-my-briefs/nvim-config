@@ -87,8 +87,6 @@ null_ls.setup {
         callback = function()
           lsp_formatting(bufnr)
           -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-          -- NOTE: re-enable below if we need to disable 'no conflicts' thign again
-          -- vim.lsp.buf.formatting_sync()
         end,
       })
     end

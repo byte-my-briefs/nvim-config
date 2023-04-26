@@ -102,7 +102,17 @@ local plugins = {
     end,
   },
 
-  --------------------------------------- RUST ------------------------------------------
+  ----------------------------------- SESSION MANAGEMENT -----------------------------------
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    -- module = "persistence",
+    config = function()
+      require("persistence").setup()
+    end,
+  },
+
+  ----------------------------------------- RUST -------------------------------------------
 
   {
     "simrat39/rust-tools.nvim",
@@ -132,7 +142,7 @@ local plugins = {
     end,
   },
 
-  ----------------------------------------- GO -------------------------------------------
+  ----------------------------------------- GO --------------------------------------------
 
   {
     -- See https://github.com/ray-x/go.nvim

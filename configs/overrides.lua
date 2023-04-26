@@ -8,6 +8,17 @@ M.treesitter = {
     "vim",
     "lua",
 
+    -- basics
+    "bash",
+    "c",
+    "markdown",
+    "markdown_inline",
+    "regex",
+
+    "python",
+    "rust",
+    "go",
+
     -- web dev
     "html",
     "css",
@@ -15,21 +26,11 @@ M.treesitter = {
     "javascript",
     "typescript",
     "tsx",
-
-    -- favs
-    "prisma",
-    "rust",
-    "python",
-    "go",
-    "dockerfile",
     "svelte",
 
-    --misc.
-    "bash",
-    "c",
-    "markdown",
-    "markdown_inline",
-    "regex",
+    -- misc.
+    "prisma",
+    "dockerfile",
   },
 
   indent = {
@@ -61,20 +62,12 @@ M.mason = {
     "lua-language-server",
     "stylua",
 
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "deno",
-    "prettierd",
-
     -- c/cpp stuff
     "clangd",
     "clang-format",
 
     -- python
     "pyright",
-    -- "jedi-language-server",
     "black",
     "isort",
     "flake8",
@@ -84,13 +77,27 @@ M.mason = {
     "rust-analyzer",
     "codelldb",
 
-    -- custom
+    -- web dev stuff
+    "css-lsp",
+    "html-lsp",
+    "typescript-language-server",
+    "deno",
+    "prettierd",
     "svelte-language-server",
     "tailwindcss-language-server",
+
+    -- misc.
     "prisma-language-server",
     "eslint-lsp",
     "bash-language-server",
     "goimports",
+  },
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗",
+    },
   },
 }
 

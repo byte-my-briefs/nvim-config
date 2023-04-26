@@ -14,9 +14,25 @@ M.disabled = {
   },
 }
 
+M.Persistence = {
+  n = {
+    -- restore the session for the current directory
+    ["<leader>qs"] = {
+      "<cmd>lua require('persistence').load()<cr>",
+      "Persistence.nvim - Restore last session for current directory",
+    },
+    -- restore the last session
+    ["<leader>ql"] = {
+      "<cmd>lua require('persistence').load({ last = true })<cr>",
+      "Persistence.nvim - Restore last session",
+    },
+    -- stop Persistence => session won't be saved on exit
+    ["<leader>qd"] = { "<cmd>lua require('persistence').stop()<cr>", "Persistence.nvim - Stop Persistence" },
+  },
+}
+
 M.Refactoring = {
   v = {
-
     -- Remaps for the refactoring operations currently offered by the plugin
     ["<leader>Re"] = {
       "<Esc><cmd>lua require('refactoring').refactor('Extract Function')<cr>",
@@ -40,7 +56,6 @@ M.Refactoring = {
     },
   },
   n = {
-
     -- Extract block doesn't need visual mode
     ["<leader>Rbb"] = {
       "<cmd>lua require('refactoring').refactor('Extract Block')<cr>",
@@ -61,7 +76,7 @@ M.Refactoring = {
   },
 }
 
-M.ai = {
+M.AI = {
   n = {
     -- NeoAI
     ["<leader>Aa"] = { "<cmd>NeoAI<cr>", "NeoAI - Normal Mode" },

@@ -7,31 +7,27 @@ local lspconfig = require "lspconfig"
 -- if you just want default config for the servers then put them in a table
 -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
 -- for all available serveers/configurations.
--- NOTE: Any new LSPs MUST BE:
+-- Note: Any new LSPs MUST BE:
 --            (1) ADDED HERE,
 --            (2) AND added to the list of req'd Mason servers in './overrides.lua.'
 local servers = {
-  -- TODO: install PYTHON LSP (jedi or Pyright).
   "lua_ls",
+
+  "bashls",
+  "clangd",
+  "pyright",
+  "tsserver",
+  -- Note: Rust-analyzer is included, but is loaded automatically by Rust-tools, so do NOT turn this on.
+  -- See https://github.com/simrat39/rust-tools.nvim#setup for more information.
+  -- "rust_analyzer",
+
   "html",
   "cssls",
-  "tsserver",
-  "clangd",
-
-  "pyright",
-
   "svelte",
   "tailwindcss",
   "emmet_ls",
 
   "prismals",
-
-  "bashls",
-
-  -- NOTE: Rust-analyzer is included, but is loaded automatically by Rust-tools, so do NOT turn this on.
-  -- See https://github.com/simrat39/rust-tools.nvim#setup for more information.
-  --
-  -- "rust_analyzer",
 }
 
 ------------------------------------- SERVER SETUP -----------------------------------------
@@ -47,8 +43,7 @@ end
 
 -- lspconfig.pyright.setup { blabla }
 
--- NOTE: Custom config for lua_ls; we need to pass several specific options.
-
+-- Custom config for lua_ls; we need to pass several specific options.
 lspconfig.lua_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -81,15 +76,8 @@ lspconfig.lua_ls.setup {
 
 -- NOTE: do *NOT* add new setups like the below UNLESS also re-passing
 -- 'on_attach' and 'capabilities' (ass seen above); it will fuck everything up.
-
 -- lspconfig.tsserver.setup {}
 -- lspconfig.prismals.setup {}
--- lspconfig.rust_analyzer.setup {
---   -- Server-specific settings. See `:help lspconfig-setup`
---   settings = {
---     ["rust-analyzer"] = {},
---   },
--- }
 -- lspconfig.svelte.setup {}
 -- lspconfig.tailwindcss.setup {}
 -- lspconfig.emmet_ls.setup {}
