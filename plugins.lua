@@ -10,7 +10,10 @@ local plugins = {
     config = function()
       require("neodev").setup {
         -- See https://github.com/rcarriga/nvim-dap-ui#configuration
-        library = { plugins = { "nvim-dap-ui" }, types = true },
+        library = {
+          plugins = { "nvim-dap-ui" },
+          types = true,
+        },
       }
     end,
   },
@@ -48,11 +51,45 @@ local plugins = {
   },
 
   {
+    "hrsh7th/nvim-cmp",
+    -- All below must be passed for Copilot-cmp to function properly.
+    event = "VeryLazy",
+    dependencies = {
+      { "zbirenbaum/copilot-cmp" },
+    },
+    opts = {
+      sources = {
+        { name = "copilot" },
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "nvim_lua" },
+        { name = "path" },
+      },
+    },
+  },
+
+  ------------------------------------- LSP SUPPORT ----------------------------------------
+
+  {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("trouble").setup {}
     end,
+  },
+
+  {
+    "glepnir/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+      require("lspsaga").setup {}
+    end,
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+      --Please make sure you install markdown and markdown_inline parser
+      { "nvim-treesitter/nvim-treesitter" },
+    },
   },
 
   ---------------------------------- VERSION CONTROL --------------------------------------
@@ -183,6 +220,7 @@ local plugins = {
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },
+
   --------------------------------- AI && AUTO-COMPLETE -----------------------------------
 
   {
@@ -222,24 +260,6 @@ local plugins = {
         },
       }
     end,
-  },
-
-  {
-    "hrsh7th/nvim-cmp",
-    event = "VeryLazy",
-    dependencies = {
-      { "zbirenbaum/copilot-cmp" },
-    },
-    opts = {
-      sources = {
-        { name = "copilot" },
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "nvim_lua" },
-        { name = "path" },
-      },
-    },
   },
 
   {
@@ -366,6 +386,38 @@ local plugins = {
   },
 
   {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    config = function()
+      require("zen-mode").setup {
+        window = {
+          backdrop = 0.95, -- default: 0.95
+          options = {
+            -- signcolumn = "no", -- disable signcolumn
+            -- number = false, -- disable number column
+            -- relativenumber = false, -- disable relative numbers
+            -- cursorline = false, -- disable cursorline
+            -- cursorcolumn = false, -- disable cursor column
+            -- foldcolumn = "0", -- disable fold column
+            -- list = false, -- disable whitespace characters
+          },
+        },
+      }
+    end,
+  },
+
+  {
+    "folke/twilight.nvim",
+    config = function()
+      require("twilight").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end,
+  },
+
+  {
     "ray-x/lsp_signature.nvim",
     event = "InsertEnter",
     config = function()
@@ -398,36 +450,37 @@ local plugins = {
 
   ------------------------------------------- MISC. ---------------------------------------------
 
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "VeryLazy",
-    config = function()
-      -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
-      vim.opt.termguicolors = true
-      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
-      vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
-
-      -- vim.opt.list = true
-      -- vim.opt.listchars:append "space:⋅"
-
-      require("indent_blankline").setup {
-        -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
-        space_char_blankline = " ",
-        char_highlight_list = {
-          "IndentBlanklineIndent1",
-          "IndentBlanklineIndent2",
-          "IndentBlanklineIndent3",
-          "IndentBlanklineIndent4",
-          "IndentBlanklineIndent5",
-          "IndentBlanklineIndent6",
-        },
-      }
-    end,
-  },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
+  --     vim.opt.termguicolors = true
+  --     vim.cmd [[highlight IndentBlanklineIndent1 guifg=#F7A8B2 gui=nocombine]] -- prev: E06C75
+  --     vim.cmd [[highlight IndentBlanklineIndent2 guifg=#F3D8B3 gui=nocombine]] -- prev: E5C07B
+  --     vim.cmd [[highlight IndentBlanklineIndent3 guifg=#C4D7B5 gui=nocombine]] -- prev: 98C379
+  --     vim.cmd [[highlight IndentBlanklineIndent4 guifg=#89C6D5 gui=nocombine]] -- prev: 56B6C2
+  --     vim.cmd [[highlight IndentBlanklineIndent5 guifg=#9BC6F3 gui=nocombine]] -- prev: 61AFEF
+  --     vim.cmd [[highlight IndentBlanklineIndent6 guifg=#D8AADD gui=nocombine]] -- prev: C678DD
+  --
+  --     -- vim.opt.list = true
+  --     -- vim.opt.listchars:append "space:⋅"
+  --
+  --     -- require("indent_blankline").setup {
+  --     --   -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
+  --     --   space_char_blankline = " ",
+  --     --   char_highlight_list = {
+  --     --     "IndentBlanklineIndent1",
+  --     --     "IndentBlanklineIndent2",
+  --     --     "IndentBlanklineIndent3",
+  --     --     "IndentBlanklineIndent4",
+  --     --     "IndentBlanklineIndent5",
+  --     --     "IndentBlanklineIndent6",
+  --     --   },
+  --
+  --     -- }
+  --   end,
+  -- },
 
   {
     "itchyny/vim-cursorword",

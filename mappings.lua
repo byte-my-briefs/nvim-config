@@ -1,7 +1,7 @@
 ---@type MappingsTable
 local M = {}
 
------------------------------------ NvChad Overrides --------------------------------------
+----------------------------------- NvCHAD OVERRIDES --------------------------------------
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
@@ -15,6 +15,45 @@ M.disabled = {
   },
 }
 
+M.LspSaga = {
+  n = {
+    ["<leader>gh"] = { "<cmd>Lspsaga lsp_finder<cr>", "LSP Finder" }, -- Use <C-t> to jump back
+    ["<leader>ca"] = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+    ["<leader>gr"] = { "<cmd>Lspsaga rename<cr>", "Rename symbol" },
+    ["<leader>gp"] = { "<cmd>Lspsaga peek_definition<cr>", "Peek definition" }, -- Use <C-t> to jump back
+    ["<leader>gd"] = { "<cmd>Lspsaga goto_definition<cr>", "Go to definition" },
+    ["<leader>gt"] = { "<cmd>Lspsaga goto_type_definition<cr>", "Go to type definition" },
+
+    ["<leader>sl"] = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Show line diagnostics" },
+    ["<leader>sb"] = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "Show buffer diagnostics" },
+    ["<leader>sw"] = { "<cmd>Lspsaga show_workspace_diagnostics<cr>", "Show workspace diagnostics" },
+    ["<leader>sc"] = { "<cmd>Lspsaga show_cursor_diagnostics<cr>", "Show cursor diagnostics" },
+
+    ["<leader>ci"] = { "Lspsaga incoming_calls", "Incoming calls" },
+    ["<leader>co"] = { "Lspsaga outgoing_calls", "Outgoing calls" },
+
+    ["[e"] = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Previous diagnostic" },
+    ["]e"] = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next diagnostic" },
+
+    ["K"] = { "<cmd>Lspsaga hover_doc<cr>", "Hover doc" },
+    ["<leader>o"] = { "<cmd>Lspsaga outline<cr>", "Outline" },
+    ["<leader>tt"] = { "<cmd>Lspsaga term_toggle<cr>", "Toggle Floaterm" },
+    ["<leader>rn"] = { "<cmd>Lspsaga rename<cr>", "Rename symbol" },
+  },
+  v = {
+    ["<leader>ca"] = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+  },
+  t = {
+    ["<A-t"] = { "<cmd>Lspsaga term_toggle<cr>", "Toggle Floaterm" },
+  },
+}
+-------------------------------------- ZEN MODE -------------------------------------------
+M.Zen = {
+  n = {
+    ["<leader>Z"] = { "<cmd>ZenMode<cr>", "Zen Mode" },
+  },
+}
+-------------------------------------- HARPOON --------------------------------------------
 M.Harpoon = {
   n = {
     ["<leader>F"] = { "<cmd>Telescope harpoon marks <cr>", "Harpoon - Telescope" },
@@ -33,14 +72,14 @@ M.Harpoon = {
   },
 }
 
----------------------------------- Vim-Fugitive (Git) -------------------------------------
+---------------------------------- VIM-FUGITIVE (Git) -------------------------------------
 M.Fugitive = {
   n = {
     ["<leader>G"] = { "<cmd>Git<cr>", "Git Fugitive" },
   },
 }
 
---------------------------------------- Undo Tree -----------------------------------------
+--------------------------------------- UNDO TREE -----------------------------------------
 M.UndoTree = {
   n = {
     ["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
@@ -61,7 +100,7 @@ M.AI = {
   },
 }
 
------------------------------------------ Noice -------------------------------------------
+----------------------------------------- NOICE -------------------------------------------
 M.Noice = {
   n = {
     ["<leader>Nh"] = { "<cmd>Noice history<cr>", "Noice - History" },
