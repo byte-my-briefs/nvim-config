@@ -353,12 +353,8 @@ local plugins = {
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
         },
-        signature = {
-          enabled = false,
-        },
-        hover = {
-          enabled = false,
-        },
+        signature = { enabled = false },
+        hover = { enabled = false },
       },
       presets = {
         -- See https://github.com/folke/noice.nvim#-installation

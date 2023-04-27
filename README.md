@@ -1,4 +1,11 @@
-# ByteMyBriefs's Neovim Config
+<h1 align="center">
+ByteMyBriefs's Neovim Config
+</h1>
+
+<p align="center">
+<a href="https://github.com/ByteMyBriefs/nvim-config/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/avocadeys/NVCat?colorA=363a4f&colorB=f5e0dc&style=for-the-badge"></a>
+<a><img src="https://img.shields.io/github/languages/code-size/ByteMyBriefs/nvim-config?colorA=363a4f&colorB=b4befe&style=for-the-badge"></a>
+</p>
 
 This repository contains my current Neovim configuration. I primarily decided to
 publish it so that my friends who are interested in Neovim can easily make the
@@ -18,15 +25,15 @@ configuring our UI.
 
 ## 🎪 Showcase
 
-![Splash Screen](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/splash.png?raw=true)
+![Splash Screen](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/splash.png?raw=true)
 
-![Default View of Editor](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/buf.png?raw=true)
+![Default View of Editor](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/buf.png?raw=true)
 
-![Noice Cmdline - Dracula](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/cmd_dracula.png?raw=true)
+![Noice Cmdline - Dracula](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/cmd_dracula.png?raw=true)
 
-![Split Buffers](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/splitbufs.png?raw=true)
+![Split Buffers](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/splitbufs.png?raw=true)
 
-![Keymap](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/demo/keymap.png?raw=true)
+![Keymap](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/keymap.png?raw=true)
 
 ## 🛠️ Installation / Setup
 
