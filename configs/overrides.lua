@@ -110,10 +110,12 @@ M.nvimtree = {
   },
 
   renderer = {
-    highlight_git = true,
+    highlight_git = false,
     icons = {
+      git_placement = "after",
       show = {
         git = true,
+        modified = true,
       },
     },
   },

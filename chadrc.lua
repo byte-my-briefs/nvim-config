@@ -7,30 +7,31 @@ local highlights = require "custom.highlights"
 ----------------------------------------- UI -------------------------------------------
 
 M.ui = {
-  -- also see: "nightfox", "nightfox", "nightfox", "nightfox"
   theme = "nightfox",
   theme_toggle = { "nightfox", "nightfox" },
   transparency = false,
+
   hl_override = highlights.override,
   hl_add = highlights.add,
+
   telescope = {
     style = "bordered",
   },
+
   nvdash = {
     load_on_startup = true,
   },
+
   statusline = {
-    -- default/vscode/vscode_colored/minimal
-    theme = "default",
-    -- default/round/block/arrow (separators work only for "default" statusline theme;
-    -- round and block will work for the minimal theme only)
-    separator_style = "default",
-    -- overriden_modules = nil,
+    theme = "default", -- default/vscode/vscode_colored/minimal
+    separator_style = "default", -- default/round/block/arrow (separators work only for "default"
+    -- statusline theme; round and block will work for the minimal theme only)
   },
+
   tabufline = {
     lazyload = true,
-    -- overriden_modules = nil,
   },
+
   -- changed_themes = {
   -- nightfox = {
   -- base_30 = {

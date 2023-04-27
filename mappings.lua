@@ -17,9 +17,10 @@ M.disabled = {
 
 M.Harpoon = {
   n = {
+    ["<leader>F"] = { "<cmd>Telescope harpoon marks <cr>", "Harpoon - Telescope" },
+
     ["<leader>Ha"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Harpoon - Add File" },
-    ["<leader>Hh"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
-    ["<leader>HH"] = { "<cmd>Telescope harpoon marks <cr>", "Harpoon - Telescope" },
+    ["<leader>HH"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
     ["<leader>Hn"] = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Harpoon - Next File" },
     ["<leader>Hp"] = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Harpoon - Previous File" },
 
