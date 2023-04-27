@@ -55,7 +55,7 @@ local plugins = {
     end,
   },
 
-  ----------------------------------- VERSION CONTROL --------------------------------------
+  ---------------------------------- VERSION CONTROL --------------------------------------
   {
     "tpope/vim-fugitive",
     event = "VeryLazy",
@@ -67,7 +67,14 @@ local plugins = {
     -- See './init.lua' for config options
   },
 
-  ----------------------------------- SESSION MANAGEMENT -----------------------------------
+  ------------------------------- FILE / SESSION MANAGEMENT --------------------------------
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
   {
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened

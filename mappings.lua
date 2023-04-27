@@ -1,6 +1,7 @@
 ---@type MappingsTable
 local M = {}
 
+----------------------------------- NvChad Overrides --------------------------------------
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
@@ -14,6 +15,80 @@ M.disabled = {
   },
 }
 
+M.Harpoon = {
+  n = {
+    ["<leader>Ha"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Harpoon - Add File" },
+    ["<leader>Hh"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
+    ["<leader>Hn"] = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Harpoon - Next File" },
+    ["<leader>Hp"] = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Harpoon - Previous File" },
+
+    ["<leader>H1"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Harpoon - File 1" },
+    ["<leader>H2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Harpoon - File 2" },
+    ["<leader>H3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Harpoon - File 3" },
+    ["<leader>H4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Harpoon - File 4" },
+  },
+}
+
+---------------------------------- Vim-Fugitive (Git) -------------------------------------
+M.Fugitive = {
+  n = {
+    ["<leader>G"] = { "<cmd>Git<cr>", "Git Fugitive" },
+  },
+}
+
+--------------------------------------- Undo Tree -----------------------------------------
+M.UndoTree = {
+  n = {
+    ["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
+  },
+}
+
+---------------------------------------- NeoAI --------------------------------------------
+M.AI = {
+  n = {
+    -- NeoAI
+    ["<leader>Aa"] = { "<cmd>NeoAI<cr>", "NeoAI - Normal Mode" },
+    ["<leader>Ac"] = { "<cmd>NeoAIContext<cr>", "NeoAI - Context Mode" },
+    ["<leader>Ai"] = { "<cmd>NeoAIInject<cr>", "NeoAI - Inject Mode" },
+    -- ChatGPT.nvim
+    ["<leader>Cc"] = { "<cmd>ChatGPT<cr>", "ChatGPT - Normal Mode" },
+    ["<leader>Ca"] = { "<cmd>ChatGPTActAs<cr>", "ChatGPT - Act As" },
+    ["<leader>Ce"] = { "<cmd>ChatGPTEditWithInstructions<cr>", "ChatGPT - Edit With Instructions" },
+  },
+}
+
+----------------------------------------- Noice -------------------------------------------
+M.Noice = {
+  n = {
+    ["<leader>Nh"] = { "<cmd>Noice history<cr>", "Noice - History" },
+    ["<leader>Nl"] = { "<cmd>Noice last<cr>", "Noice - Last Message" },
+    ["<leader>Nd"] = { "<cmd>Noice dismiss<cr>", "Noice - Dismiss Current Messages" },
+    ["<leader>Ne"] = { "<cmd>Noice errors<cr>", "Noice - Errors" },
+    ["<leader>Ns"] = { "<cmd>Noice stats<cr>", "Noice - Stats" },
+    ["<leader>Nt"] = { "<cmd>Noice telescope<cr>", "Noice - Telescope" },
+  },
+}
+
+------------------------------------- Trouble.nimv ----------------------------------------
+M.Trouble = {
+  n = {
+    ["<leader>Tr"] = { "<cmd>Trouble lsp_references<cr>", "Trouble - References" },
+    ["<leader>Td"] = { "<cmd>Trouble lsp_definitions<cr>", "Trouble - Definitions" },
+    ["<leader>Tg"] = { "<cmd>Trouble document_diagnostics<cr>", "Trouble - Diagnostics" },
+    ["<leader>Tq"] = { "<cmd>Trouble quickfix<cr>", "Trouble - QuickFix" },
+    ["<leader>Tl"] = { "<cmd>Trouble loclist<cr>", "Trouble - LocationList" },
+    ["<leader>Tw"] = { "<cmd>Trouble workspace_diagnostics<cr>", "Trouble - Workspace Diagnostics" },
+  },
+}
+
+-------------------------------------- LSP LINES ------------------------------------------
+M.LspLines = {
+  n = {
+    ["<leader>ll"] = { "<cmd>lua require('lsp_lines').toggle()<cr>", "LSP_LINES - Toggle" },
+  },
+}
+
+----------------------------------- Persistence.nvim --------------------------------------
 M.Persistence = {
   n = {
     -- restore the session for the current directory
@@ -31,18 +106,7 @@ M.Persistence = {
   },
 }
 
-M.Fugitive = {
-  n = {
-    ["<leader>G"] = { "<cmd>Git<cr>", "Git Fugitive" },
-  },
-}
-
-M.UndoTree = {
-  n = {
-    ["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
-  },
-}
-
+----------------------------------- Refactoring.nvim --------------------------------------
 M.Refactoring = {
   v = {
     -- Remaps for the refactoring operations currently offered by the plugin
@@ -85,50 +149,6 @@ M.Refactoring = {
       "Refactoring - Inline Variable",
       opts = { noremap = true, silent = true, expr = false },
     },
-  },
-}
-
-M.AI = {
-  n = {
-    -- NeoAI
-    ["<leader>Aa"] = { "<cmd>NeoAI<cr>", "NeoAI - Normal Mode" },
-    ["<leader>Ac"] = { "<cmd>NeoAIContext<cr>", "NeoAI - Context Mode" },
-    ["<leader>Ai"] = { "<cmd>NeoAIInject<cr>", "NeoAI - Inject Mode" },
-    -- ChatGPT.nvim
-    ["<leader>Cc"] = { "<cmd>ChatGPT<cr>", "ChatGPT - Normal Mode" },
-    ["<leader>Ca"] = { "<cmd>ChatGPTActAs<cr>", "ChatGPT - Act As" },
-    ["<leader>Ce"] = { "<cmd>ChatGPTEditWithInstructions<cr>", "ChatGPT - Edit With Instructions" },
-  },
-}
-
-M.Noice = {
-  n = {
-    -- Noice
-    ["<leader>Nh"] = { "<cmd>Noice history<cr>", "Noice - History" },
-    ["<leader>Nl"] = { "<cmd>Noice last<cr>", "Noice - Last Message" },
-    ["<leader>Nd"] = { "<cmd>Noice dismiss<cr>", "Noice - Dismiss Current Messages" },
-    ["<leader>Ne"] = { "<cmd>Noice errors<cr>", "Noice - Errors" },
-    ["<leader>Ns"] = { "<cmd>Noice stats<cr>", "Noice - Stats" },
-    ["<leader>Nt"] = { "<cmd>Noice telescope<cr>", "Noice - Telescope" },
-  },
-}
-
-M.Trouble = {
-  n = {
-    -- Trouble
-    ["<leader>Tr"] = { "<cmd>Trouble lsp_references<cr>", "Trouble - References" },
-    ["<leader>Td"] = { "<cmd>Trouble lsp_definitions<cr>", "Trouble - Definitions" },
-    ["<leader>Tg"] = { "<cmd>Trouble document_diagnostics<cr>", "Trouble - Diagnostics" },
-    ["<leader>Tq"] = { "<cmd>Trouble quickfix<cr>", "Trouble - QuickFix" },
-    ["<leader>Tl"] = { "<cmd>Trouble loclist<cr>", "Trouble - LocationList" },
-    ["<leader>Tw"] = { "<cmd>Trouble workspace_diagnostics<cr>", "Trouble - Workspace Diagnostics" },
-  },
-}
-
-M.LspLines = {
-  n = {
-    -- LSP LINES
-    ["<leader>ll"] = { "<cmd>lua require('lsp_lines').toggle()<cr>", "LSP_LINES - Toggle" },
   },
 }
 
