@@ -19,6 +19,7 @@ M.Harpoon = {
   n = {
     ["<leader>Ha"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Harpoon - Add File" },
     ["<leader>Hh"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
+    ["<leader>HH"] = { "<cmd>Telescope harpoon marks <cr>", "Harpoon - Telescope" },
     ["<leader>Hn"] = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "Harpoon - Next File" },
     ["<leader>Hp"] = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "Harpoon - Previous File" },
 
@@ -26,6 +27,8 @@ M.Harpoon = {
     ["<leader>H2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Harpoon - File 2" },
     ["<leader>H3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Harpoon - File 3" },
     ["<leader>H4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Harpoon - File 4" },
+    ["<leader>H5"] = { "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", "Harpoon - File 5" },
+    ["<leader>H6"] = { "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", "Harpoon - File 6" },
   },
 }
 
@@ -152,6 +155,7 @@ M.Refactoring = {
   },
 }
 
+-------------------------------------- MISC. ------------------------------------------
 -- more keybinds!
 
 -- which_key.mappings["t"] = {
