@@ -55,16 +55,25 @@ local plugins = {
     end,
   },
 
-  ------------------------------------- REFACTORING -----------------------------------------
+  ----------------------------------- VERSION CONTROL --------------------------------------
   {
-    "ThePrimeagen/refactoring.nvim",
-    event = "BufEnter",
-    dependencies = {
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-treesitter/nvim-treesitter" },
-    },
+    "tpope/vim-fugitive",
+    event = "VeryLazy",
+  },
+
+  {
+    "mbbill/undotree",
+    event = "VeryLazy",
+    -- See './init.lua' for config options
+  },
+
+  ----------------------------------- SESSION MANAGEMENT -----------------------------------
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    module = "persistence",
     config = function()
-      require("refactoring").setup()
+      require("persistence").setup()
     end,
   },
 
@@ -102,21 +111,17 @@ local plugins = {
     end,
   },
 
-  ----------------------------------- SESSION MANAGEMENT -----------------------------------
+  ------------------------------------- REFACTORING -----------------------------------------
   {
-    "folke/persistence.nvim",
-    event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    module = "persistence",
+    "ThePrimeagen/refactoring.nvim",
+    event = "BufEnter",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
     config = function()
-      require("persistence").setup()
+      require("refactoring").setup()
     end,
-  },
-
-  ----------------------------------- VERSION HISTORY --------------------------------------
-  {
-    "mbbill/undotree",
-    event = "VeryLazy",
-    -- See './init.lua' for config options
   },
 
   ----------------------------------------- RUST -------------------------------------------

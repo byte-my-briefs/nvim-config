@@ -19,21 +19,27 @@ M.Persistence = {
     -- restore the session for the current directory
     ["<leader>qs"] = {
       "<cmd>lua require('persistence').load()<cr>",
-      "Persistence.nvim - Restore last session for current directory",
+      "Persistence - Restore last session for current directory",
     },
     -- restore the last session
     ["<leader>ql"] = {
       "<cmd>lua require('persistence').load({ last = true })<cr>",
-      "Persistence.nvim - Restore last session",
+      "Persistence - Restore last session",
     },
     -- stop Persistence => session won't be saved on exit
-    ["<leader>qd"] = { "<cmd>lua require('persistence').stop()<cr>", "Persistence.nvim - Stop Persistence" },
+    ["<leader>qd"] = { "<cmd>lua require('persistence').stop()<cr>", "Persistence - Stop Persistence" },
+  },
+}
+
+M.Fugitive = {
+  n = {
+    ["<leader>G"] = { "<cmd>Git<cr>", "Git Fugitive" },
   },
 }
 
 M.UndoTree = {
   n = {
-    ["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "UndoTree - Toggle" },
+    ["<leader>U"] = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
   },
 }
 
