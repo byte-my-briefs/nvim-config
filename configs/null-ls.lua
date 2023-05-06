@@ -31,7 +31,7 @@ local sources = {
       "json",
       "jsonc",
       "yaml",
-      -- "svelte",
+      "svelte",
     },
   },
   formatting.stylua,

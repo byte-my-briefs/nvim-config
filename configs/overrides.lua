@@ -87,6 +87,8 @@ M.mason = {
     "tailwindcss-language-server",
 
     -- misc.
+    "json-lsp",
+    "jsonlint",
     "prisma-language-server",
     "eslint-lsp",
     "bash-language-server",

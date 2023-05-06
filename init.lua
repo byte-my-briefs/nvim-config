@@ -12,7 +12,7 @@ vim.opt.wrap = false
 
 vim.g.italic_comments = true
 vim.g.italic_keywords = true
-vim.g.italic_functions = false
+vim.g.italic_functions = true
 vim.g.italic_variables = false
 
 ---------------------------------------- PLUGIN CONFIGS ---------------------------------------------

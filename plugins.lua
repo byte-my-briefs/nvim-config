@@ -314,33 +314,6 @@ local plugins = {
     end,
   },
 
-  ------------------------------------------ MOTION -------------------------------------------
-
-  {
-    "ggandor/leap.nvim",
-    event = "VeryLazy",
-    dependencies = { "tpope/vim-repeat" },
-    config = function()
-      require("leap").add_default_mappings()
-    end,
-  },
-
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-
-  {
-    "karb94/neoscroll.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("neoscroll").setup()
-    end,
-  },
-
   ------------------------------------------ UI -------------------------------------------
 
   {
@@ -442,6 +415,33 @@ local plugins = {
     "wfxr/minimap.vim",
     enabled = false,
     event = "BufEnter",
+  },
+
+  ------------------------------------------ MOTION -------------------------------------------
+
+  {
+    "ggandor/leap.nvim",
+    event = "VeryLazy",
+    dependencies = { "tpope/vim-repeat" },
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+  },
+
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertEnter",
+    config = function()
+      require("better_escape").setup()
+    end,
+  },
+
+  {
+    "karb94/neoscroll.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("neoscroll").setup()
+    end,
   },
 
   ------------------------------------------- MISC. ---------------------------------------------

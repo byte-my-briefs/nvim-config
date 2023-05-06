@@ -7,9 +7,9 @@ local highlights = require "custom.highlights"
 ----------------------------------------- UI -------------------------------------------
 
 M.ui = {
-  theme = "nightfox",
-  theme_toggle = { "nightfox", "nightfox" },
-  transparency = false,
+  theme = "chadracula",
+  theme_toggle = { "chadracula", "chadracula" },
+  transparency = true,
 
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -33,7 +33,7 @@ M.ui = {
   },
 
   -- changed_themes = {
-  -- nightfox = {
+  -- chadracula = {
   -- base_30 = {
   -- adust comment colors so they are visible with transparent bg
   -- grey = "",
