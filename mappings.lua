@@ -195,6 +195,21 @@ M.Refactoring = {
   },
 }
 
+M.TabufLine = {
+  n = {
+    ["<leader>tl"] = {
+      "<cmd>lua require('nvchad_ui.tabufline').move_buf(-1)<cr>",
+      "TabufLine - Move Tab Left (-1)",
+      opts = { noremap = true, silent = true, expr = false },
+    },
+    ["<leader>tr"] = {
+      "<cmd>lua require('nvchad_ui.tabufline').move_buf(1)<cr>",
+      "TabufLine - Move Tab Right (1)",
+      opts = { noremap = true, silent = true, expr = false },
+    },
+  },
+}
+
 -------------------------------------- MISC. ------------------------------------------
 -- more keybinds!
 

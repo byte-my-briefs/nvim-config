@@ -404,7 +404,6 @@ local plugins = {
 
   {
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    event = "BufEnter", -- previously: 'VeryLazy'
     config = function()
       require("lsp_lines").setup()
     end,
@@ -415,6 +414,15 @@ local plugins = {
     "wfxr/minimap.vim",
     enabled = false,
     event = "BufEnter",
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
+    config = true,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
 
   ------------------------------------------ MOTION -------------------------------------------
@@ -446,37 +454,36 @@ local plugins = {
 
   ------------------------------------------- MISC. ---------------------------------------------
 
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
-  --     vim.opt.termguicolors = true
-  --     vim.cmd [[highlight IndentBlanklineIndent1 guifg=#F7A8B2 gui=nocombine]] -- prev: E06C75
-  --     vim.cmd [[highlight IndentBlanklineIndent2 guifg=#F3D8B3 gui=nocombine]] -- prev: E5C07B
-  --     vim.cmd [[highlight IndentBlanklineIndent3 guifg=#C4D7B5 gui=nocombine]] -- prev: 98C379
-  --     vim.cmd [[highlight IndentBlanklineIndent4 guifg=#89C6D5 gui=nocombine]] -- prev: 56B6C2
-  --     vim.cmd [[highlight IndentBlanklineIndent5 guifg=#9BC6F3 gui=nocombine]] -- prev: 61AFEF
-  --     vim.cmd [[highlight IndentBlanklineIndent6 guifg=#D8AADD gui=nocombine]] -- prev: C678DD
-  --
-  --     -- vim.opt.list = true
-  --     -- vim.opt.listchars:append "space:⋅"
-  --
-  --     -- require("indent_blankline").setup {
-  --     --   -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
-  --     --   space_char_blankline = " ",
-  --     --   char_highlight_list = {
-  --     --     "IndentBlanklineIndent1",
-  --     --     "IndentBlanklineIndent2",
-  --     --     "IndentBlanklineIndent3",
-  --     --     "IndentBlanklineIndent4",
-  --     --     "IndentBlanklineIndent5",
-  --     --     "IndentBlanklineIndent6",
-  --     --   },
-  --
-  --     -- }
-  --   end,
-  -- },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "VeryLazy",
+    config = function()
+      -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
+      vim.opt.termguicolors = true
+      vim.cmd [[highlight IndentBlanklineIndent1 guifg=#F7A8B2 gui=nocombine]] -- prev: E06C75
+      vim.cmd [[highlight IndentBlanklineIndent2 guifg=#F3D8B3 gui=nocombine]] -- prev: E5C07B
+      vim.cmd [[highlight IndentBlanklineIndent3 guifg=#C4D7B5 gui=nocombine]] -- prev: 98C379
+      vim.cmd [[highlight IndentBlanklineIndent4 guifg=#89C6D5 gui=nocombine]] -- prev: 56B6C2
+      vim.cmd [[highlight IndentBlanklineIndent5 guifg=#9BC6F3 gui=nocombine]] -- prev: 61AFEF
+      vim.cmd [[highlight IndentBlanklineIndent6 guifg=#D8AADD gui=nocombine]] -- prev: C678DD
+
+      -- vim.opt.list = true
+      -- vim.opt.listchars:append "space:⋅"
+
+      require("indent_blankline").setup {
+        -- See https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list
+        space_char_blankline = " ",
+        char_highlight_list = {
+          "IndentBlanklineIndent1",
+          "IndentBlanklineIndent2",
+          "IndentBlanklineIndent3",
+          "IndentBlanklineIndent4",
+          "IndentBlanklineIndent5",
+          "IndentBlanklineIndent6",
+        },
+      }
+    end,
+  },
 
   {
     "itchyny/vim-cursorword",
@@ -509,7 +516,13 @@ local plugins = {
     dependencies = { "nvim-lua/plenary.nvim" },
     event = "BufEnter",
     config = function()
-      require("todo-comments").setup {}
+      require("todo-comments").setup {
+        keywords = {
+          TODO = {
+            color = "#FF8C00",
+          },
+        },
+      }
     end,
   },
 

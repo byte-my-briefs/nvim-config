@@ -68,3 +68,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     client.server_capabilities.semanticTokensProvider = nil
   end,
 })
+
+---------------------------------------- TabufLine CONFIG ---------------------------------------------
+-- See https://github.com/NvChad/ui/blob/main/lua/nvchad_ui/tabufline/modules.lua.
+local api = vim.api
+local new_cmd = api.nvim_create_user_command
+
+-- move buffers left / right
+new_cmd("TbufLeft", function()
+  require("nvchad_ui.tabufline").move_buf(-1)
+end, {})
+
+new_cmd("TbufRight", function()
+  require("nvchad_ui.tabufline").move_buf(1)
+end, {})
