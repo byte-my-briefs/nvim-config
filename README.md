@@ -2,7 +2,6 @@
 ByteMyBriefs's Neovim Config
 </h1>
 
-<!-- TODO: -->
 <p align="center">
   <img alt="meme" src="https://filiphalas.com/static/img/posts/vscode-meme.jpeg" />
 </p>
