@@ -6,8 +6,9 @@ ByteMyBriefs's Neovim Config
   <img alt="meme" src="https://filiphalas.com/static/img/posts/vscode-meme.jpeg" />
 </p>
 
-You should probably just use VSCode like your coworkers who have personal lives,
-but here's an nvim config if you must suffer.
+You should probably just use VSCode like your coworkers who have personal lives.
+
+Nevertheless, here's an nvim config if you must suffer.
 
 > Note: This config extends NvChad. NvChad comes with pre-configured LSP
 > support, Treesitter, and nvim-cmp. Nevertheless, these can be fully customized
