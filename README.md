@@ -2,29 +2,18 @@
 ByteMyBriefs's Neovim Config
 </h1>
 
+<!-- TODO: -->
 <p align="center">
-<a href="https://github.com/ByteMyBriefs/nvim-config/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/avocadeys/NVCat?colorA=363a4f&colorB=f5e0dc&style=for-the-badge"></a>
-<a><img src="https://img.shields.io/github/languages/code-size/ByteMyBriefs/nvim-config?colorA=363a4f&colorB=b4befe&style=for-the-badge"></a>
+  <img alt="meme" src="https://filiphalas.com/static/img/posts/vscode-meme.jpeg" />
 </p>
 
-God-tier nvim config.
+You should probably just use VSCode like your coworkers who have personal lives,
+but here's an nvim config if you must suffer.
 
 > Note: This config extends NvChad. NvChad comes with pre-configured LSP
 > support, Treesitter, and nvim-cmp. Nevertheless, these can be fully customized
 > to your liking in './chadrc'. Please refer to the
 > [NvChad documentation](https://nvchad.com/) for more information.
-
-## 🎪 Showcase
-
-![Splash Screen](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/splash.png?raw=true)
-
-![Default View of Editor](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/buf.png?raw=true)
-
-![Noice Cmdline - Dracula](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/cmd_dracula.png?raw=true)
-
-![Split Buffers](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/splitbufs.png?raw=true)
-
-![Keymap](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/keymap.png?raw=true)
 
 ## 🛠️ Installation / Setup
 
@@ -122,3 +111,15 @@ As well as full IDE support for two web frameworks:
 
 Neovim can be annoying. If you have issues, email me at
 [austinsmith766@gmail.com](mailto:austinsmith766@gmail.com).
+
+## 🎪 Showcase
+
+![Splash Screen](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/splash.png?raw=true)
+
+![Default View of Editor](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/buf.png?raw=true)
+
+![Noice Cmdline - Dracula](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/cmd_dracula.png?raw=true)
+
+![Split Buffers](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/splitbufs.png?raw=true)
+
+![Keymap](https://github.com/ByteMyBriefs/nvim-config/blob/main/.github/screenshots/keymap.png?raw=true)
