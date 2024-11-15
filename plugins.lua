@@ -127,7 +127,6 @@ local plugins = {
   },
 
   ------------------------------------- DEBUGGING -----------------------------------------
-  -- TODO: add adapters/configs for Python & JS
   -- See https://github.com/mfussenegger/nvim-dap
   -- See https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript-chrome
   {

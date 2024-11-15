@@ -7,21 +7,12 @@ ByteMyBriefs's Neovim Config
 <a><img src="https://img.shields.io/github/languages/code-size/ByteMyBriefs/nvim-config?colorA=363a4f&colorB=b4befe&style=for-the-badge"></a>
 </p>
 
-This repository contains my current Neovim configuration. I primarily decided to
-publish it so that my friends who are interested in Neovim can easily make the
-transition from other editors. However, anyone else who is interested can
-certainly benefit from it as well.
+God-tier nvim config.
 
-It is an extension of [NvChad](https://github.com/NvChad/NvChad) and will not
-work without it. Though I used to run my own bootstrapped config, NvChad is just
-absolutely beautiful, and using it saves a lot of headache when it comes to
-configuring our UI.
-
-> Note: NvChad comes with some basic batteries included. Most pertinently,
-> NvChad comes with LSP support, Treesitter, and nvim-cmp already
-> pre-configured. These, however, can be fully customized to our liking in
-> './chadrc'. Please refer to their [documentation](https://nvchad.com/) for
-> more information.
+> Note: This config extends NvChad. NvChad comes with pre-configured LSP
+> support, Treesitter, and nvim-cmp. Nevertheless, these can be fully customized
+> to your liking in './chadrc'. Please refer to the
+> [NvChad documentation](https://nvchad.com/) for more information.
 
 ## 🎪 Showcase
 
@@ -46,11 +37,11 @@ configuring our UI.
 2. **NvChad**: Next, set up NvChad per their
    [instructions](https://nvchad.com/docs/quickstart/install).
 
-   > **Note**: They reccomend having a Nerd font installed (and I do as well).
-   > Installation is easy and a great tutorial can be found
-   > [here](https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/).
-   > Additionally, please see [NerdFonts.com](https://www.nerdfonts.com/) for a
-   > fantastic collection of the most popular nerd fonts.
+   > **Note**: NvChad reccomends having a Nerd font installed (as do I).
+   > Installation is easy. A helpful tutorial can be found
+   > [here](https://www.geekbits.io/how-to-install-nerd-fonts-on-mac/). A list
+   > of popular nerd fonts can be found at
+   > [NerdFonts.com](https://www.nerdfonts.com/).
 
 3. **Clone this Repository**: Once NvChad is installed, delete the
    `./lua/custom` directory.
@@ -58,27 +49,25 @@ configuring our UI.
    ```
    npx degit https://github.com/ByteMyBriefs/nvim-config lua/custom
    ```
-   - Now, simply open up Neovim. Lazy.nvim (your new plugin manager) will
-     automatically begin installing all plugins, LSP servers, etc. After that...
-
-🎊🎉 VOILA 🎉🎊.
+   - Run `nvim` in your current directory to open Neovim. Lazy.nvim (your new
+     plugin manager) will automatically begin installing all plugins, LSP
+     servers, etc.
 
 You should now be good to go ☺️.
 
 **(Optional) Configure AI Plugins**: Lastly, for those of you that want to take
-advantage, we need to quickly set up your AI tooling. These should be very
-quick.
+advantage, we need to quickly set up your AI tooling.
 
-- **Copilot.lua && cmp-copilot**: Once all plugins are installed, simply enter
-  the command `"Copilot auth` and login to your Github account. If you have any
-  issues, please see their full documentation
-  [here](https://github.com/zbirenbaum/copilot.lua).
+- **Copilot.lua && cmp-copilot**: Enter the command `"Copilot auth` and login to
+  your Github account. If you have any issues, please see their full
+  documentation [here](https://github.com/zbirenbaum/copilot.lua).
 
 > **Note**: An active Copilot account is required.
 
-- **ChatGPT.nvim && NeoAI**: Set environment variable called $OPENAI_API_KEY
-  which you can obtain [here](https://platform.openai.com/account/api-keys).
-  Full instructions can be found
+- **ChatGPT.nvim && NeoAI**: Set an environment variable named `$OPENAI_API_KEY`
+  with your OpenAI API key (which you can obtain
+  [here](https://platform.openai.com/account/api-keys)). Configuration settings
+  for ChatGPT.nvim and neoai.nvim can be found
   [here](https://github.com/jackMort/ChatGPT.nvim) and
   [here](https://github.com/Bryley/neoai.nvim) respectively.
 
@@ -90,17 +79,7 @@ quick.
 In addition to the theming and UI provided by NvChad, this configuration also
 offers:
 
-### First-Class AI Integration
-
-- **[Copilot.lua](https://github.com/zbirenbaum/copilot.lua)** by zbirenbaum
-
-- **[Cmp-copilot](https://github.com/zbirenbaum/copilot-cmp)** by zbirenbaum
-
-- **[ChatGpt](https://github.com/jackMort/ChatGPT.nvim)** by jackMort
-
-- **[NeoAI](https://github.com/Bryley/neoai.nvim)** by Bryley
-
-### Out-of-the-Box Support for All Major Languages
+### Out-of-the-Box Support for Major Modern Languages
 
 - **Python**: LSP, flake8
 - **Javascript / Typescript**: LSPs, Eslint server, Prettier server
@@ -108,18 +87,12 @@ offers:
   Rust-Analyzer and full debugging support) and Rustfmt
 - **Go**: LSP, Gofmt, Goimports
 
-**As well as full IDE support for**:
+As well as full IDE support for two web frameworks:
 
-- **Svelte**, and
-- **React**.
+- Svelte (goat 🐐), and
+- React.
 
-### Enhanced Motion
-
-- **[Leap](https://github.com/ggandor/leap.nvim)** by ggandor
-
-- **[NeoScroll](https://github.com/karb94/neoscroll.nvim)** by karb94
-
-### Beautiful UI
+### Custom UI/UX
 
 - **[NvChad](https://github.com/NvChad/NvChad)**
 
@@ -129,9 +102,23 @@ offers:
 
 - (Extra) **[Neovide](https://neovide.dev/) Support**
 
-## Conclusion (Parting Words)
+### Enhanced Motion
 
-Lastly, please keep in mind that **working with Neovim can be hard and
-confusing** at times. This is especially true when you are first getting into
-it. Please feel free to reach out to me on here any time you need help; I am
-**more than happy** to help anyone get comfortable using it themselves.
+- **[Leap](https://github.com/ggandor/leap.nvim)** by ggandor
+
+- **[NeoScroll](https://github.com/karb94/neoscroll.nvim)** by karb94
+
+### Basic AI Integrations
+
+- **[Copilot.lua](https://github.com/zbirenbaum/copilot.lua)** by zbirenbaum
+
+- **[Cmp-copilot](https://github.com/zbirenbaum/copilot-cmp)** by zbirenbaum
+
+- **[ChatGpt](https://github.com/jackMort/ChatGPT.nvim)** by jackMort
+
+- **[NeoAI](https://github.com/Bryley/neoai.nvim)** by Bryley
+
+## Support
+
+Neovim can be annoying. If you have issues, email me at
+[austinsmith766@gmail.com](mailto:austinsmith766@gmail.com).

@@ -26,6 +26,8 @@ local servers = {
   "svelte",
   "tailwindcss",
   "emmet_ls",
+  "eslint-lsp",
+  "eslint_d",
 
   "prismals",
 }

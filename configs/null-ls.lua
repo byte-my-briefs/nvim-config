@@ -19,8 +19,6 @@ local diagnostics = null_ls.builtins.diagnostics
 -- local completion = null_ls.builtins.completions
 
 local sources = {
-
-  ------------------------------------ FORMATTERS ---------------------------------------
   formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
   formatting.prettierd.with {
     filetypes = {
@@ -32,33 +30,24 @@ local sources = {
       "jsonc",
       "yaml",
       "svelte",
+      "typescript",
+      "javascript",
     },
   },
   formatting.stylua,
   formatting.clang_format,
-
   diagnostics.flake8,
   diagnostics.mypy,
   formatting.black,
   formatting.isort,
-
   formatting.rustfmt,
-
   formatting.prismaFmt,
-
-  -- Handled by Go.nvim (see https://github.com/ray-x/go.nvim)
-  -- formatting.gofmt,
-  -- formatting.goimports,
-
-  ----------------------------------- CODE ACTIONS --------------------------------------
+  diagnostics.eslint_d,
   code_actions.eslint_d,
 }
 
 ------------------ NULL_LS: PREVENT CONFLICTS WITH OTHER LANG-SERVERS -------------------
 -- SEE: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts --
-
--- TODO: re-disable this IFF disabling doesn't fix null_ls problems
--- Also, remember: re-disable this IFF disabling doesn't fix 'man.lua no manual entry...' problem
 local lsp_formatting = function(bufnr)
   vim.lsp.buf.format {
     filter = function(client)
